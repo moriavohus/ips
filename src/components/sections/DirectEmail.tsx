@@ -11,7 +11,7 @@ export default function DirectEmail() {
 
                 {/* Left Side */}
                 <div className="flex w-full flex-1 flex-col items-start">
-                    <h2 className="heading-h3-bold w-full max-w-none break-words text-type-primary">
+                    <h2 className="font-sans text-h3-bold-mobile md:text-h2-bold text-type-primary w-full max-w-none break-words">
                         {t("title")}{" "}
                         {t("emailLabel")}{" "}
                         <a

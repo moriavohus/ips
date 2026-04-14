@@ -16,14 +16,14 @@ interface IndustryHeroProps {
 
 export default function IndustryHero({ data }: IndustryHeroProps) {
     return (
-        <section className="relative h-[80svh] min-h-[80svh] w-full flex items-end overflow-hidden -mt-[112px]">
+        <section className="relative h-[80vh] min-h-[80vh] w-full flex items-end overflow-hidden -mt-[112px] lg:h-[80svh] lg:min-h-[80svh]">
             {/* Background with Image */}
             <div className="absolute inset-0 z-0">
                 <Image
                     src={data.heroImage}
                     alt={data.fullName}
                     fill
-                    className="object-cover object-center"
+                    className="object-cover object-top md:object-center"
                     priority
                 />
                 <div
@@ -35,12 +35,12 @@ export default function IndustryHero({ data }: IndustryHeroProps) {
                 />
             </div>
 
-            <div className="container mx-auto relative z-10 px-5 pt-[160px] pb-xl lg:px-10">
-                <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 items-end">
+            <div className="container mx-auto relative z-10 px-5 pt-[148px] pb-xl lg:px-10">
+                <div className="grid grid-cols-1 items-end gap-0 lg:grid-cols-12 lg:gap-10">
 
-                    <div className="lg:col-span-8 flex min-h-[180px] flex-col lg:min-h-[180px]">
+                    <div className="flex flex-col gap-s pb-m lg:col-span-8 lg:min-h-[180px] lg:gap-0 lg:pb-0">
                         {/* Breadcrumb */}
-                        <div className="mb-6">
+                        <div className="mb-0">
                             <Breadcrumbs
                                 items={[
                                     { label: "HOME", href: "/" },
@@ -51,7 +51,7 @@ export default function IndustryHero({ data }: IndustryHeroProps) {
                         </div>
 
                         {/* Title */}
-                        <h1 className="font-sans text-[40px] md:text-[58px] font-normal leading-[1] tracking-[-0.02em] text-white mb-10">
+                        <h1 className="font-sans text-h2-mobile md:text-[58px] font-normal leading-[1] tracking-[-0.02em] text-white mb-0">
                             {data.fullName.split("/").map((part, i, arr) => (
                                 <span key={i}>
                                     {part.trimEnd()}
@@ -66,7 +66,7 @@ export default function IndustryHero({ data }: IndustryHeroProps) {
 
                     </div>
 
-                    <div className="lg:col-span-4 flex flex-1 flex-col items-start gap-[40px] lg:justify-between self-stretch">
+                    <div className="flex flex-1 flex-col items-start gap-m self-stretch lg:col-span-4 lg:gap-[40px] lg:justify-between">
                         <p className="font-sans text-[19px] text-white font-normal leading-[1.4] max-w-[600px] opacity-90">
                             {data.heroText}
                         </p>

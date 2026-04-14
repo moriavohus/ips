@@ -116,9 +116,9 @@ export default function AboutPage() {
                         />
                       </div>
                       <div className="px-[28px] pb-[28px]">
-                        <div className="mt-[28px] mb-[20px] flex w-[284px] flex-col items-start justify-center gap-[8px]">
+                        <div className="mt-[28px] mb-[20px] flex w-full self-stretch flex-col items-start justify-center gap-[8px] lg:flex-row lg:items-center lg:gap-s">
                           <span className="text-h4 text-type-primary">{num}</span>
-                          <h3 className="text-h2-bold-mobile md:text-h2-bold text-type-primary">
+                          <h3 className="w-full text-h2-bold-mobile md:text-h2-bold text-type-primary">
                             {item.title}
                           </h3>
                         </div>

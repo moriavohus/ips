@@ -8,7 +8,7 @@ export default function MobileFooterText() {
   return (
     <section className="lg:hidden bg-surface-dark py-[20px] -mb-px">
       <div className="container mx-auto">
-        <p className="font-sans text-[32px] font-normal leading-[1.1] tracking-[-1px] text-white">
+        <p className="font-sans text-h2-bold-mobile text-white">
           {t("headline")}
         </p>
       </div>

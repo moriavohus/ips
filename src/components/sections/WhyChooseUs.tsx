@@ -47,27 +47,24 @@ export default function WhyChooseUs({ namespace = "whyChooseUs" }: WhyChooseUsPr
                                 // Desktop: border-b only on the top 2 items
                                 const borderClass = index < 3 ? "border-b border-type-secondary " : "";
                                 const desktopBorderClass = index < 2 ? "md:border-b md:border-type-secondary" : "md:border-b-0";
-                                const pyClass = "py-6 md:py-[28px]";
-
                                 return (
-                                    <div key={key} className={`relative flex items-center justify-center text-center px-s md:px-16 ${borderClass} ${desktopBorderClass} ${pyClass}`}>
-                                        {/* Decorative Corners */}
-                                        <div className="absolute top-s md:top-[28px] left-s md:left-[30px] text-type-brand">
-                                            <CornerBracket className="-rotate-90" />
-                                        </div>
-                                        <div className="absolute top-s md:top-[28px] right-s md:right-[30px] text-type-brand">
-                                            <CornerBracket />
-                                        </div>
-                                        <div className="absolute bottom-s md:bottom-[28px] left-s md:left-[30px] text-type-brand">
-                                            <CornerBracket className="rotate-180" />
-                                        </div>
-                                        <div className="absolute bottom-s md:bottom-[28px] right-s md:right-[30px] text-type-brand">
-                                            <CornerBracket className="rotate-90" />
-                                        </div>
+                                    <div key={key} className={`flex items-stretch ${borderClass} ${desktopBorderClass}`}>
+                                        <div className="flex w-full items-stretch justify-center gap-m px-m py-m md:gap-[30px] md:px-[30px] md:py-[28px]">
+                                            <div className="flex shrink-0 flex-col justify-between self-stretch text-type-brand">
+                                                <CornerBracket className="-rotate-90" />
+                                                <CornerBracket className="rotate-180" />
+                                            </div>
 
-                                        {/* Text Container */}
-                                        <div className="font-sans text-[22px] md:text-[32px] font-bold text-type-primary leading-[1.3] tracking-[-0.5px] max-w-[420px]">
-                                            {t(`features.${key}`)}
+                                            <div className="flex flex-1 items-center justify-center text-center self-stretch">
+                                                <div className="w-full max-w-[620px] font-sans text-h4-bold-mobile md:text-[32px] md:font-bold text-type-primary leading-[1.3] tracking-[-0.5px]">
+                                                    {t(`features.${key}`)}
+                                                </div>
+                                            </div>
+
+                                            <div className="flex shrink-0 flex-col justify-between self-stretch text-type-brand">
+                                                <CornerBracket />
+                                                <CornerBracket className="rotate-90" />
+                                            </div>
                                         </div>
                                     </div>
                                 );
@@ -81,7 +78,7 @@ export default function WhyChooseUs({ namespace = "whyChooseUs" }: WhyChooseUsPr
                     {/* Action Button */}
                     <Link
                         href="/about"
-                        className="bg-type-brand hover:bg-black transition-colors text-white font-sans text-[16px] md:text-[18px] font-medium leading-[1.1] tracking-[0.02em] uppercase px-[30px] md:px-[40px] py-[16px] md:py-[20px] rounded-[14px] flex items-center justify-center gap-2 w-full md:w-fit"
+                        className="bg-type-brand hover:bg-black transition-colors text-white font-sans text-[16px] md:text-[18px] font-medium leading-[1.1] tracking-[0.02em] uppercase px-[30px] md:px-[40px] rounded-[14px] flex h-[56px] items-center justify-center gap-2 w-full md:w-fit"
                     >
                         {t("button")}
                     </Link>

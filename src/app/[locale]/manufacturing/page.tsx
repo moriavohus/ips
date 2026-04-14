@@ -43,9 +43,10 @@ export default function ManufacturingPage() {
                 subtitle={t("hero.subtitle")}
                 ctaText={t("hero.cta")}
                 ctaHref="/products"
-                imageSrc="/images/DOCUMENTS/Portfolio Header/12.png"
+                imageSrc="/images/DOCUMENTS/Portfolio%20Header/12.png"
                 imageAlt="Manufacturing Hub"
-                imageFit="contain"
+                imageFit="cover"
+                imageWrapperClassName="relative h-full w-full overflow-hidden rounded-[8px] lg:absolute lg:inset-[20px] lg:h-auto lg:w-auto"
             />
 
             <section className="bg-white py-[20px] overflow-visible">

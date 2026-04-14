@@ -67,8 +67,8 @@ export default function Footer() {
         <div className="mb-20 flex w-full flex-col gap-12 lg:mb-[120px] lg:gap-20">
         <div>
           <Link href="/">
-            <div className="w-[120px] h-[72px] bg-white rounded-xl flex items-center justify-center">
-              <div className="relative w-[90px] h-[45px]">
+            <div className="w-[133px] h-[62px] bg-white rounded-[10px] flex items-center justify-center">
+              <div className="relative w-[80px] h-[36px]">
                 <Image
                   src="/images/Navbar/5/Frame-2085664158.svg"
                   alt="IPS Middle East Logo"

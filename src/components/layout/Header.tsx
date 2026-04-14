@@ -281,30 +281,26 @@ export default function Header() {
                 <div key={link.href} className="flex flex-col items-center w-full">
                   {link.hasDropdown ? (
                     <button
-                      className={`flex items-center gap-2 font-sans text-[16px] font-medium uppercase tracking-[0.02em] leading-[1.1] transition-colors ${
+                      className={`flex items-center gap-2 font-sans text-button-mobile uppercase transition-colors ${
                         pathname.startsWith(link.href) ? 'text-primary' : 'text-black'
                       }`}
                       onClick={() => setMobileDropdown(mobileDropdown === link.id ? null : link.id)}
                     >
                       <span>{link.label}</span>
-                      <svg
-                        width="16"
-                        height="16"
-                        viewBox="0 0 24 24"
-                        fill="none"
-                        stroke="currentColor"
-                        strokeWidth="2"
-                        strokeLinecap="round"
-                        strokeLinejoin="round"
-                        className={`transition-transform duration-300 ${mobileDropdown === link.id ? 'rotate-180' : ''}`}
-                      >
-                        <polyline points="6 9 12 15 18 9" />
-                      </svg>
+                      <div className="relative h-6 w-6 shrink-0 rotate-90">
+                        <Image
+                          src="/images/nav_Down.svg"
+                          alt=""
+                          fill
+                          className="object-contain"
+                          style={{ filter: "brightness(0) saturate(100%)" }}
+                        />
+                      </div>
                     </button>
                   ) : (
                     <Link
                       href={link.href}
-                      className={`font-sans text-[16px] font-medium uppercase tracking-[0.02em] leading-[1.1] transition-colors ${
+                      className={`font-sans text-button-mobile uppercase transition-colors ${
                         pathname.startsWith(link.href) ? 'text-primary' : 'text-black'
                       }`}
                       onClick={closeMobileMenu}
@@ -325,7 +321,7 @@ export default function Header() {
                           <Link
                             key={idx}
                             href={item.href}
-                            className="font-sans text-[14px] text-type-secondary hover:text-primary uppercase tracking-wider transition-colors"
+                            className="font-sans text-button-mobile text-black-secondary hover:text-primary uppercase transition-colors"
                             onClick={closeMobileMenu}
                           >
                             {item.label}
@@ -343,7 +339,7 @@ export default function Header() {
               <Link
                 href="/contact"
                 onClick={closeMobileMenu}
-                className="bg-black-primary text-white w-full h-[56px] rounded-[10px] font-sans text-[16px] font-medium uppercase tracking-[0.02em]"
+                className="bg-black-primary text-white w-full h-[56px] rounded-[10px] font-sans text-button-mobile uppercase"
               >
                 <span className="flex h-full w-full items-center justify-center">
                   {t("contact")}
@@ -352,7 +348,7 @@ export default function Header() {
               <a
                 href="/docs/technical-data-sheet.pdf"
                 onClick={closeMobileMenu}
-                className="flex items-center justify-center gap-3 font-sans text-[16px] font-medium text-type-primary uppercase tracking-[0.02em] py-3"
+                className="flex items-center justify-center gap-3 font-sans text-button-mobile text-type-primary uppercase py-3"
               >
                 <span>Download Tech Datasheets</span>
                 <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">

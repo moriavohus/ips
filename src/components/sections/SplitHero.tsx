@@ -33,9 +33,9 @@ export default function SplitHero({
   imageFit = "cover",
 }: SplitHeroProps) {
   return (
-    <section className="bg-white pt-[10px] pb-[32.5px] lg:pb-[40px] min-h-[70vh] flex items-center">
+    <section className="bg-white pt-[10px] pb-[32.5px] lg:pb-[40px] flex items-center lg:min-h-[70vh]">
         <div className="container mx-auto">
-          <div className="outside-stroke-mobile-light bg-white border-0 lg:border-[20px] border-background rounded-[24px] lg:rounded-[44px] relative min-h-[calc(70vh-16px)] overflow-visible flex flex-col gap-[40px] p-[14px] lg:grid lg:grid-cols-12 lg:gap-0 lg:p-0">
+          <div className="outside-stroke-mobile-light bg-white border-0 lg:border-[20px] border-background rounded-[24px] lg:rounded-[44px] relative overflow-visible flex flex-col gap-[40px] p-[14px] lg:min-h-[calc(70vh-16px)] lg:grid lg:grid-cols-12 lg:gap-0 lg:p-0">
 
           {/* Left Content Column */}
           <div className="order-2 lg:order-1 lg:col-span-6 px-0 pt-0 lg:p-[20px] flex flex-col justify-center items-start relative z-10 w-full rounded-t-[24px] lg:rounded-l-[24px] lg:rounded-tr-none bg-white">
@@ -92,7 +92,7 @@ export default function SplitHero({
           </div>
 
           {/* Right Image Column */}
-          <div className="order-1 lg:order-2 lg:col-span-6 relative h-[320px] lg:h-auto min-h-full w-full">
+          <div className="order-1 lg:order-2 lg:col-span-6 relative h-[180px] lg:h-auto min-h-full w-full">
             <div className={imageWrapperClassName ?? "relative h-full w-full overflow-hidden rounded-[14px] lg:absolute lg:inset-[20px] lg:h-auto lg:w-auto"}>
               <Image
                 src={imageSrc}

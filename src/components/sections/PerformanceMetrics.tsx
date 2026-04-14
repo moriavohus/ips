@@ -46,7 +46,7 @@ export default function PerformanceMetrics({
 
   const GridContent = (
     <div
-      className={`grid ${gridClasses} gap-[4px]`}
+      className={`grid ${gridClasses} items-start gap-[4px]`}
       style={customItems && !columnsClassName ? ({ ["--metrics-cols" as string]: resolvedItems.length } as CSSProperties) : undefined}
     >
       {resolvedItems.map((item, index) => {
@@ -55,14 +55,14 @@ export default function PerformanceMetrics({
           : item.title.split("|||");
 
         return (
-        <div key={`${item.title}-${index}`} className="bg-background rounded-[8px] flex flex-col min-h-[160px] md:min-h-[180px] p-s lg:p-8 justify-between">
-          <div className="flex h-[80px] items-center text-type-brand">
+        <div key={`${item.title}-${index}`} className="bg-background rounded-[8px] flex flex-1 self-stretch flex-col items-start gap-m p-m lg:gap-m lg:p-m">
+          <div className="flex h-6 w-6 items-center justify-center text-type-brand">
             {item.icon ? (
-              <div className="relative h-8 w-8">
+              <div className="relative h-6 w-6 shrink-0">
                 <Image src={item.icon} alt="" fill className="object-contain" />
               </div>
             ) : item.Icon ? (
-              <item.Icon className="h-6 w-6" />
+              <item.Icon className="h-6 w-6 shrink-0" />
             ) : null}
           </div>
           <div className="flex flex-col gap-2 md:gap-3">
