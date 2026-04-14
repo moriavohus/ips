@@ -1,0 +1,72 @@
+/* ==============================================
+   DESIGN TOKENS — IPS Middle East
+   Подключи в globals.css:
+   @import './variables.css';
+   ============================================== */
+
+:root {
+
+  /* ==============================================
+     GLOBAL COLORS
+     ============================================== */
+
+  --Background:        #F5F5F5;
+  --Brand:             #DD0004;
+  --Brand-Dark:        #B30C0F;
+  --Black-Primary:     #1C1917;
+  --Black-Secondary:   #6F707D;
+  --Black-Third:       #B7B8BE;
+  --MenuGlass:         rgba(245, 245, 245, 0.60);
+  --White:             #FFFFFF;
+
+  /* Blur для меню — применяй так:
+     backdrop-filter: blur(20px);
+     background: var(--MenuGlass);
+  */
+
+  /* ==============================================
+     BORDER RADIUS
+     ============================================== */
+
+  --radius-xs:   4px;
+  --radius-sm:   8px;
+  --radius-md:   10px;
+  --radius-lg:   14px;
+  --radius-xl:   20px;
+  --radius-2xl:  28px;
+  --radius-3xl:  40px;
+  --radius-4xl:  64px;
+  --radius-full: 80px;
+
+  /* ==============================================
+     SPACING
+     ============================================== */
+
+  --space-xxs:   4px;
+  --space-xs:    8px;
+  --space-s:     14px;
+  --space-m:     20px;
+  --space-l:     28px;
+  --space-xl:    40px;
+  --space-xxl:   64px;
+  --space-xxxl:  80px;
+
+  /* ==============================================
+     SEMANTIC — TEXT
+     ============================================== */
+
+  --Text-Primary:       #1C1917;
+  --Text-Secondary:     #6F707D;
+  --Text-Third:         #B7B8BE;
+  --Text-Brand:         #B30C0F;
+  --Text-Dark-Primary:  var(--White);
+  --Text-Dark-Secondary:#DDDDDD;
+
+  /* SEMANTIC — TYPE (aliases) */
+  --Type-Primary:       var(--Text-Primary);
+  --Type-Secondary:     var(--Text-Secondary);
+  --Type-Third:         var(--Text-Third);
+  --Type-Brand:         var(--Text-Brand);
+  --Type-White:         var(--White);
+
+}

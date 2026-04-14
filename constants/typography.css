@@ -1,0 +1,279 @@
+/* ==============================================
+   TYPOGRAPHY — IPS Middle East
+   Подключи этот файл в globals.css или layout:
+   @import './typography.css';
+   ============================================== */
+
+/* Базовые настройки шрифта для всего сайта */
+:root {
+  --font-inter-display: "Inter Display", sans-serif;
+  --font-inter: "Inter", sans-serif;
+  --text-primary: var(--Text-Primary);
+}
+
+/* ==============================================
+   DESKTOP
+   ============================================== */
+
+/* Desktop/H1 — 58px */
+.text-h1 {
+  font-family: var(--font-inter-display);
+  font-size: 3.625rem;       /* 58px */
+  font-weight: 400;
+  line-height: 1;             /* 100% */
+  letter-spacing: -0.02em;   /* -1.16px / 58px */
+  font-feature-settings: 'salt' on;
+  color: var(--text-primary);
+}
+
+/* Desktop/H2 — 48px */
+.text-h2 {
+  font-family: var(--font-inter-display);
+  font-size: 3rem;            /* 48px */
+  font-weight: 400;
+  line-height: 1;             /* 100% */
+  letter-spacing: -0.0208em; /* -1px / 48px */
+  font-feature-settings: 'salt' on;
+  color: var(--text-primary);
+}
+
+/* Desktop/H2 Bold — 48px 600 */
+.text-h2-bold {
+  font-family: var(--font-inter-display);
+  font-size: 3rem;            /* 48px */
+  font-weight: 600;
+  line-height: 1;
+  letter-spacing: -0.0208em;
+  font-feature-settings: 'salt' on;
+  color: var(--text-primary);
+}
+
+/* Desktop/H3 — 32px */
+.text-h3 {
+  font-family: var(--font-inter-display);
+  font-size: 2rem;            /* 32px */
+  font-weight: 400;
+  line-height: 1.2;           /* 120% */
+  letter-spacing: -0.01em;   /* -0.32px / 32px */
+  font-feature-settings: 'salt' on;
+  color: var(--text-primary);
+}
+
+/* Desktop/H3 Bold — 32px 600 */
+.text-h3-bold {
+  font-family: var(--font-inter-display);
+  font-size: 2rem;            /* 32px */
+  font-weight: 600;
+  line-height: 1.125;         /* 36px */
+  letter-spacing: -0.03125em;/* -1px / 32px */
+  color: var(--text-primary);
+}
+
+/* Desktop/H4 — 22px */
+.text-h4 {
+  font-family: var(--font-inter-display);
+  font-size: 1.375rem;        /* 22px */
+  font-weight: 400;
+  line-height: 1.4;           /* 140% */
+  color: var(--text-primary);
+}
+
+/* Desktop/H4 Bold — 22px 700 */
+.text-h4-bold {
+  font-family: var(--font-inter-display);
+  font-size: 1.375rem;        /* 22px */
+  font-weight: 700;
+  line-height: 1.182;         /* 26px */
+  color: var(--text-primary);
+}
+
+/* Desktop/Text — 19px */
+.text-body {
+  font-family: var(--font-inter-display);
+  font-size: 1.1875rem;       /* 19px */
+  font-weight: 400;
+  line-height: 1.4;           /* 140% */
+  color: var(--text-primary);
+}
+
+/* Desktop/Text Bold — 19px 600 */
+.text-body-bold {
+  font-family: var(--font-inter-display);
+  font-size: 1.1875rem;       /* 19px */
+  font-weight: 600;
+  line-height: 1.5;           /* 150% */
+  color: var(--text-primary);
+}
+
+/* Desktop/Text Small — 14px */
+.text-small {
+  font-family: var(--font-inter-display);
+  font-size: 0.875rem;        /* 14px */
+  font-weight: 400;
+  line-height: 1.5;           /* 150% */
+  color: var(--text-primary);
+}
+
+/* Desktop/Text Caps — 16px uppercase */
+.text-caps {
+  font-family: var(--font-inter);
+  font-size: 1rem;            /* 16px */
+  font-weight: 500;
+  line-height: 1.1;           /* 110% */
+  text-transform: uppercase;
+  color: var(--text-primary);
+}
+
+/* Desktop/Caps Bold — 16px uppercase 700 */
+.text-caps-bold {
+  font-family: var(--font-inter);
+  font-size: 1rem;            /* 16px */
+  font-weight: 700;
+  line-height: 1.1;
+  text-transform: uppercase;
+  color: var(--text-primary);
+}
+
+/* Desktop/Button — 18px */
+.text-button {
+  font-family: var(--font-inter-display);
+  font-size: 1.125rem;        /* 18px */
+  font-weight: 500;
+  line-height: 1.1;           /* 110% */
+  text-transform: uppercase;
+  color: var(--text-primary);
+}
+
+
+/* ==============================================
+   MOBILE
+   ============================================== */
+
+/* Mobile/H1 — 48px */
+.text-h1-mobile {
+  font-family: var(--font-inter-display);
+  font-size: 3rem;            /* 48px */
+  font-weight: 400;
+  line-height: 1;             /* 100% */
+  letter-spacing: -0.02em;   /* -0.96px / 48px */
+  font-feature-settings: 'salt' on;
+  color: var(--text-primary);
+}
+
+/* Mobile/H2 — 32px */
+.text-h2-mobile {
+  font-family: var(--font-inter-display);
+  font-size: 2rem;            /* 32px */
+  font-weight: 400;
+  line-height: 1.1;           /* 110% */
+  letter-spacing: -0.03125em;/* -1px / 32px */
+  font-feature-settings: 'salt' on;
+  color: var(--text-primary);
+}
+
+/* Mobile/H2 Bold — 32px 600 */
+.text-h2-bold-mobile {
+  font-family: var(--font-inter-display);
+  font-size: 2rem;            /* 32px */
+  font-weight: 600;
+  line-height: 1.1;
+  letter-spacing: -0.03125em;
+  font-feature-settings: 'salt' on;
+  color: var(--text-primary);
+}
+
+/* Mobile/H3 — 22px */
+.text-h3-mobile {
+  font-family: var(--font-inter-display);
+  font-size: 1.375rem;        /* 22px */
+  font-weight: 400;
+  line-height: 1.2;           /* 120% */
+  letter-spacing: -0.01em;   /* -0.22px / 22px */
+  font-feature-settings: 'salt' on;
+  color: var(--text-primary);
+}
+
+/* Mobile/H3 Bold — 22px 600 */
+.text-h3-bold-mobile {
+  font-family: var(--font-inter-display);
+  font-size: 1.375rem;        /* 22px */
+  font-weight: 600;
+  line-height: 1.2;
+  letter-spacing: -0.01em;
+  color: var(--text-primary);
+}
+
+/* Mobile/H4 — 18px */
+.text-h4-mobile {
+  font-family: var(--font-inter-display);
+  font-size: 1.125rem;        /* 18px */
+  font-weight: 400;
+  line-height: 1.222;         /* 22px */
+  color: var(--text-primary);
+}
+
+/* Mobile/H4 Bold — 18px 600 */
+.text-h4-bold-mobile {
+  font-family: var(--font-inter-display);
+  font-size: 1.125rem;        /* 18px */
+  font-weight: 600;
+  line-height: 1.222;
+  color: var(--text-primary);
+}
+
+/* Mobile/Text — 16px */
+.text-body-mobile {
+  font-family: var(--font-inter-display);
+  font-size: 1rem;            /* 16px */
+  font-weight: 400;
+  line-height: 1.5;           /* 150% */
+  color: var(--text-primary);
+}
+
+/* Mobile/Text Bold — 15px 600 */
+.text-body-bold-mobile {
+  font-family: var(--font-inter-display);
+  font-size: 0.9375rem;       /* 15px */
+  font-weight: 600;
+  line-height: 1.5;
+  color: var(--text-primary);
+}
+
+/* Mobile/Text Small — 13px */
+.text-small-mobile {
+  font-family: var(--font-inter-display);
+  font-size: 0.8125rem;       /* 13px */
+  font-weight: 400;
+  line-height: 1.5;
+  color: var(--text-primary);
+}
+
+/* Mobile/Text Caps — 12px uppercase */
+.text-caps-mobile {
+  font-family: var(--font-inter);
+  font-size: 0.75rem;         /* 12px */
+  font-weight: 500;
+  line-height: 1.1;
+  text-transform: uppercase;
+  color: var(--text-primary);
+}
+
+/* Mobile/Text Caps Bold — 12px 700 */
+.text-caps-bold-mobile {
+  font-family: var(--font-inter);
+  font-size: 0.75rem;         /* 12px */
+  font-weight: 700;
+  line-height: 1.1;
+  text-transform: uppercase;
+  color: var(--text-primary);
+}
+
+/* Mobile/Button — 15px */
+.text-button-mobile {
+  font-family: var(--font-inter-display);
+  font-size: 0.9375rem;       /* 15px */
+  font-weight: 500;
+  line-height: 1.1;
+  text-transform: uppercase;
+  color: var(--text-primary);
+}

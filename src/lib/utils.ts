@@ -1,0 +1,51 @@
+export function cn(...classes: (string | undefined | null | false)[]) {
+  return classes.filter(Boolean).join(" ");
+}
+
+export function validateEmail(email: string): boolean {
+  return /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email);
+}
+
+export type ContactFormData = {
+  name: string;
+  email: string;
+  company?: string;
+  phone?: string;
+  message: string;
+  product?: string;
+  quantity?: string;
+};
+
+export function validateContactForm(data: ContactFormData) {
+  const errors: Partial<Record<keyof ContactFormData, string>> = {};
+
+  if (!data.name.trim()) errors.name = "nameRequired";
+  if (!data.email.trim()) errors.email = "emailRequired";
+  else if (!validateEmail(data.email)) errors.email = "emailInvalid";
+  if (!data.message.trim()) errors.message = "messageRequired";
+
+  return {
+    isValid: Object.keys(errors).length === 0,
+    errors,
+  };
+}
+
+export function scrollToContactForm() {
+  if (typeof window === "undefined") return;
+
+  const contactSection = document.getElementById("contact");
+
+  if (!contactSection) {
+    window.location.hash = "contact";
+    return;
+  }
+
+  const headerOffset = 120;
+  const targetTop =
+    contactSection.getBoundingClientRect().top + window.scrollY - headerOffset;
+
+  window.scrollTo({
+    top: Math.max(targetTop, 0),
+    behavior: "smooth",
+  });
+}

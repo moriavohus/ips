@@ -1,0 +1,152 @@
+@import "../../constants/variables.css";
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@font-face {
+  font-family: "Inter Display";
+  src: url("/fonts/ttf/InterDisplay-Regular.ttf") format("truetype");
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: "Inter Display";
+  src: url("/fonts/ttf/InterDisplay-Medium.ttf") format("truetype");
+  font-weight: 500;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: "Inter Display";
+  src: url("/fonts/ttf/InterDisplay-SemiBold.ttf") format("truetype");
+  font-weight: 600;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: "Inter Display";
+  src: url("/fonts/ttf/InterDisplay-Bold.ttf") format("truetype");
+  font-weight: 700;
+  font-style: normal;
+  font-display: swap;
+}
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+  }
+
+  body {
+    @apply font-sans antialiased text-type-primary bg-black-primary;
+    font-size: 19px;
+    line-height: 1.4;
+    font-feature-settings: "cv11" 1, "ss01" 1, "ss03" 1;
+  }
+
+  a, button {
+    cursor: pointer;
+  }
+
+}
+
+@media (max-width: 767px) {
+  .container {
+    padding-left: 20px !important;
+    padding-right: 20px !important;
+  }
+}
+
+@layer components {
+  .section-padding {
+    @apply py-[32.5px] lg:py-10;
+  }
+
+  /* Typography utilities — Figma specs */
+  .heading-h1 {
+    @apply font-sans text-h1-mobile md:text-h1;
+  }
+
+  .heading-h2 {
+    @apply font-sans text-h2-mobile md:text-h2;
+  }
+
+  .heading-h2-bold {
+    @apply font-sans text-h2-bold-mobile md:text-h2-bold;
+  }
+
+  .heading-h3 {
+    @apply font-sans text-h3-mobile md:text-h3;
+  }
+
+  .heading-h3-bold {
+    @apply font-sans text-h3-bold-mobile md:text-h3-bold;
+  }
+
+  .heading-h4 {
+    @apply font-sans text-h4-mobile md:text-h4;
+  }
+
+  .heading-h4-bold {
+    @apply font-sans text-h4-bold-mobile md:text-h4-bold;
+  }
+
+  .text-caps-style {
+    @apply font-sans text-caps-mobile md:text-caps uppercase;
+  }
+
+  .text-caps-bold-style {
+    @apply font-sans text-caps-bold-mobile md:text-caps-bold uppercase;
+  }
+
+  .text-button-style {
+    @apply font-sans text-button-mobile md:text-button uppercase;
+  }
+
+  /* Legacy aliases */
+  .heading-hero {
+    @apply heading-h1;
+  }
+
+  .heading-section {
+    @apply heading-h2-bold;
+  }
+}
+
+/* Header: mobile nav до 1433px, desktop nav после 1433px */
+@media (min-width: 1280px) and (max-width: 1432px) {
+  /* Скрываем десктоп-навигацию */
+  header nav.desktop-nav {
+    display: none !important;
+  }
+  /* Скрываем десктоп кнопку contact */
+  header .desktop-contact {
+    display: none !important;
+  }
+  /* Показываем мобильную кнопку бургера */
+  header .mobile-burger {
+    display: flex !important;
+  }
+  /* Показываем мобильную кнопку GET A QUOTE */
+  header .mobile-cta {
+    display: block !important;
+  }
+  /* Показываем мобильное оверлей-меню */
+  header .mobile-overlay {
+    display: block !important;
+  }
+  /* Header стили как на мобилке */
+  header {
+    background-color: var(--MenuGlass) !important;
+  }
+  header > div:first-child {
+    width: 100%;
+    padding: 8px;
+    max-width: 100%;
+  }
+  header > div:first-child > div:first-child {
+    border-radius: 0 !important;
+    padding: 8px !important;
+  }
+}
