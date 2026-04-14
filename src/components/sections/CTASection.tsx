@@ -24,7 +24,7 @@ export default function CTASection({ variant = "default", pageVariant = "default
             </p>
           </div>
         )}
-        <div className="grid w-full grid-cols-1 items-start gap-40 md:gap-20 lg:grid-cols-2 lg:gap-24">
+        <div className="grid w-full grid-cols-1 items-start gap-xl md:gap-20 lg:grid-cols-2 lg:gap-24">
             {/* Left side texts */}
             <div className="flex flex-col">
               {t("eyebrow") && (

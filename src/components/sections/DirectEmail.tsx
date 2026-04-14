@@ -10,8 +10,8 @@ export default function DirectEmail() {
             <div className="container mx-auto flex w-full max-w-[1920px] flex-col items-start gap-12 px-5 py-[80px] lg:flex-row lg:gap-[160px] lg:px-[40px] lg:py-[80px]">
 
                 {/* Left Side */}
-                <div className="flex-1 flex flex-col items-start">
-                    <h2 className="heading-h2-bold text-type-primary">
+                <div className="flex w-full flex-1 flex-col items-start">
+                    <h2 className="heading-h3-bold w-full max-w-none break-words text-type-primary">
                         {t("title")}{" "}
                         {t("emailLabel")}{" "}
                         <a
@@ -24,7 +24,7 @@ export default function DirectEmail() {
                 </div>
 
                 {/* Right Side */}
-                <div className="flex flex-1 w-full flex-col justify-center">
+                <div className="flex w-full flex-1 flex-col justify-center">
                     <div className="heading-h4 text-type-primary mb-4">
                         {t("includeText")}
                     </div>

@@ -7,7 +7,7 @@ export default function CTAForm() {
   const t = useTranslations("cta");
 
   return (
-    <div className="flex w-full flex-[1_0_0] flex-col items-start justify-center gap-20 rounded-[20px] border-[12px] border-[#636363] bg-[#252525] p-5 shadow-2xl md:rounded-[28px] md:border-[18px]">
+    <div className="flex w-full flex-[1_0_0] self-stretch flex-col items-start justify-center gap-20 rounded-[24px] border-0 bg-[#252525] p-5 [box-shadow:0_0_0_12px_#636363,0_25px_50px_-12px_rgb(0_0_0_/_0.25)] lg:rounded-[44px] lg:border-[20px] lg:border-[#636363] lg:p-5 lg:[box-shadow:0_25px_50px_-12px_rgb(0_0_0_/_0.25)]">
       <form className="flex w-full flex-col gap-5" onSubmit={(e) => e.preventDefault()}>
         <div className="grid grid-cols-1 md:grid-cols-2 gap-5">
           <div className="flex flex-col gap-2">

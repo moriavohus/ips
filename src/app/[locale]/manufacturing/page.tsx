@@ -65,15 +65,14 @@ export default function ManufacturingPage() {
                     {/* Right column — steps on grey background, extending to right edge */}
                     <div className="lg:w-[62%] relative">
                             {/* Grey container with thin border effect */}
-                        <div className="bg-background rounded-[20px] p-[6px] flex flex-col gap-[6px]">
+                        <div className="bg-background rounded-[12px] p-[4px] flex flex-col gap-[4px]">
                             {steps.map((step, idx) => {
                                 const isFirst = idx === 0;
                                 const isLast = idx === steps.length - 1;
                                 return (
                                     <div
                                         key={idx}
-                                        className={`bg-white px-8 py-10 flex items-start gap-6 relative min-h-[140px] ${isFirst ? "rounded-t-[16px]" : ""} ${isLast ? "rounded-b-[16px]" : ""} ${!isFirst && !isLast ? "" : ""}`}
-                                        style={{ borderRadius: isFirst ? "16px 16px 16px 16px" : isLast ? "16px 16px 16px 16px" : "16px" }}
+                                        className="bg-white px-8 py-10 flex items-start gap-6 relative min-h-[140px] rounded-[8px]"
                                     >
                                         {/* Line going DOWN from this circle (not on last card) */}
                                         {!isLast && (

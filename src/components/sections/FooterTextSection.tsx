@@ -9,7 +9,7 @@ export default function FooterTextSection({ text, variant = "light", className =
     return (
         <section className={`${isDark ? "bg-black-primary" : "bg-background"} ${className}`}>
             <div className="w-full">
-                <div className="flex flex-col items-start self-stretch p-5 md:p-10">
+                <div className="flex flex-col items-start self-stretch p-s md:p-10">
                     <h2 className={`w-full max-w-none text-h2-mobile md:text-h2 ${isDark ? "text-white" : "text-type-primary"} text-left break-words`}>
                         {text}
                     </h2>

@@ -11,7 +11,7 @@ export default function ContactHero() {
 
     return (
         <SectionWrapper id="contact-hero" bg="white" className="pt-4 pb-2">
-            <div className="bg-surface-dark border-[12px] lg:border-[20px] border-background rounded-[14px] lg:rounded-[44px] relative min-h-[500px] flex flex-col lg:grid lg:grid-cols-12 overflow-hidden">
+            <div className="outside-stroke-mobile-light bg-surface-dark border-0 lg:border-[20px] border-background rounded-[14px] lg:rounded-[44px] relative min-h-[500px] flex flex-col lg:grid lg:grid-cols-12 overflow-hidden">
 
                     {/* Left Side */}
                     <div className="lg:col-span-5 px-[20px] py-[40px] lg:px-[40px] lg:py-[80px] flex flex-col justify-center bg-surface-dark">
@@ -36,7 +36,7 @@ export default function ContactHero() {
                     </div>
 
                     {/* Right Side - Form */}
-                    <div className="lg:col-span-7 bg-surface-darker rounded-b-[14px] lg:rounded-b-none lg:rounded-r-[24px] p-[20px] flex items-center">
+                    <div className="lg:col-span-7 bg-surface-darker rounded-b-[14px] lg:rounded-b-none lg:rounded-r-[24px] p-s lg:p-[20px] flex items-center">
                         <form
                             className="w-full flex flex-col gap-[20px]"
                             onSubmit={(e) => e.preventDefault()}

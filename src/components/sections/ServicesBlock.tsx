@@ -16,7 +16,7 @@ export default function ServicesBlock() {
 
   return (
     <SectionWrapper id="services" bg="white">
-      <div className="bg-white border-[10px] lg:border-[20px] border-background rounded-[24px] lg:rounded-[44px] p-[20px] relative flex flex-col">
+      <div className="outside-stroke-mobile-light bg-white border-0 lg:border-[20px] border-background rounded-[24px] lg:rounded-[44px] p-s lg:p-[20px] relative flex flex-col">
           {t("eyebrow") && (
             <div className="text-caps-style text-type-primary mb-4">
               {t("eyebrow")}

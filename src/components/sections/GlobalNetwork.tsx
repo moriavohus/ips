@@ -42,7 +42,7 @@ export default function GlobalNetwork() {
                     {locations.map((loc, idx) => (
                         <div
                             key={idx}
-                            className="bg-background rounded-[6px] p-5"
+                            className="bg-background rounded-[6px] p-s lg:p-5"
                         >
                             <Image src={flagSvgs[idx] || flagSvgs[0]} alt={loc.name} width={45} height={28} className="mb-3" />
                             <div className="font-sans text-h3 text-type-primary mb-1">{loc.name}</div>

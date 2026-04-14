@@ -21,7 +21,7 @@ export default function IndustriesMap({ variant = "default" }: IndustriesMapProp
 
   const sectionId = variant === "navigation" ? "industries-nav" : "industries";
   const wrapperClasses = variant === "navigation"
-    ? "bg-background rounded-[12px] p-[20px]"
+    ? "bg-background rounded-[12px] p-s lg:p-[20px]"
     : "bg-background rounded-[12px] p-[4px]";
   const gridGap = variant === "navigation" ? "gap-5" : "gap-[4px]";
 
@@ -76,7 +76,7 @@ export default function IndustriesMap({ variant = "default" }: IndustriesMapProp
                   </div>
 
                   {/* Content */}
-                  <div className="flex flex-col flex-1 p-5 pt-4">
+                  <div className="flex flex-col flex-1 p-s pt-s lg:p-5 lg:pt-4">
                     <h3 className="font-sans text-h3-bold-mobile md:text-h3-bold text-type-primary mb-3">
                       {t(`${key}.name`)}
                     </h3>

@@ -55,7 +55,7 @@ export default function PerformanceMetrics({
           : item.title.split("|||");
 
         return (
-        <div key={`${item.title}-${index}`} className="bg-background rounded-[8px] flex flex-col min-h-[160px] md:min-h-[180px] p-6 lg:p-8 justify-between">
+        <div key={`${item.title}-${index}`} className="bg-background rounded-[8px] flex flex-col min-h-[160px] md:min-h-[180px] p-s lg:p-8 justify-between">
           <div className="text-type-brand">
             {item.icon ? (
               <div className="relative h-8 w-8">
@@ -76,7 +76,7 @@ export default function PerformanceMetrics({
                 </div>
               </>
             ) : (
-              <div className="font-sans text-h4-bold-mobile md:text-h4-bold text-type-brand">
+              <div className="font-sans text-h3-mobile md:text-h4-bold text-type-brand">
                 {labelText}
               </div>
             )}
@@ -103,7 +103,7 @@ export default function PerformanceMetrics({
   return (
     <section id="metrics" className="section-padding overflow-hidden bg-white">
       <div className="w-full px-5">
-        <div className="bg-white border-[10px] lg:border-[20px] border-background rounded-[24px] lg:rounded-[44px] p-[20px] flex flex-col">
+        <div className="outside-stroke-mobile-light bg-white border-0 lg:border-[20px] border-background rounded-[24px] lg:rounded-[44px] p-s lg:p-[20px] flex flex-col">
           <div className="flex flex-col mb-16 md:mb-[80px]">
             {(customEyebrow ?? t("eyebrow")) && (
               <div className="font-sans text-[16px] font-medium text-type-secondary leading-[1.1] uppercase mb-4">

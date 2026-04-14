@@ -63,6 +63,21 @@
     @apply py-[32.5px] lg:py-10;
   }
 
+  .outside-stroke-mobile-light {
+    box-shadow: 0 0 0 12px var(--Background);
+  }
+
+  .outside-stroke-mobile-dark {
+    box-shadow: 0 0 0 12px #636363;
+  }
+
+  @media (min-width: 1024px) {
+    .outside-stroke-mobile-light,
+    .outside-stroke-mobile-dark {
+      box-shadow: none;
+    }
+  }
+
   .viewport-shell {
     width: calc(100vw - 40px);
     max-width: 1840px;

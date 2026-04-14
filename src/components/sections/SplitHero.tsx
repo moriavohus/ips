@@ -31,10 +31,10 @@ export default function SplitHero({
   return (
     <section className="bg-white pt-[10px] pb-[32.5px] lg:pb-[40px] min-h-[70vh] flex items-center">
         <div className="container mx-auto">
-          <div className="bg-white border-[10px] lg:border-[20px] border-background rounded-[24px] lg:rounded-[44px] relative min-h-[calc(70vh-16px)] overflow-visible flex flex-col lg:grid lg:grid-cols-12">
+          <div className="outside-stroke-mobile-light bg-white border-0 lg:border-[20px] border-background rounded-[24px] lg:rounded-[44px] relative min-h-[calc(70vh-16px)] overflow-visible flex flex-col lg:grid lg:grid-cols-12">
 
           {/* Left Content Column */}
-          <div className="lg:col-span-6 p-[20px] flex flex-col relative z-10 w-full rounded-t-[24px] lg:rounded-l-[24px] lg:rounded-tr-none bg-white">
+          <div className="lg:col-span-6 p-s lg:p-[20px] flex flex-col relative z-10 w-full rounded-t-[24px] lg:rounded-l-[24px] lg:rounded-tr-none bg-white">
             <div className="mb-[20px] lg:mb-16">
               {typeof breadcrumb === "string" ? (
                 <span className="text-caps-style text-type-primary">{breadcrumb}</span>
@@ -85,7 +85,7 @@ export default function SplitHero({
 
           {/* Right Image Column */}
           <div className="lg:col-span-6 relative h-[400px] lg:h-auto min-h-full">
-            <div className="absolute inset-[20px] overflow-hidden rounded-[14px]">
+            <div className="absolute inset-x-s bottom-s top-[20px] overflow-hidden rounded-[14px] lg:inset-[20px]">
               <Image
                 src={imageSrc}
                 alt={imageAlt}

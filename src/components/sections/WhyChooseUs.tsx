@@ -19,7 +19,7 @@ export default function WhyChooseUs({ namespace = "whyChooseUs" }: WhyChooseUsPr
 
     return (
         <SectionWrapper id="why-choose-us" bg="white">
-            <div className="bg-white border-[10px] lg:border-[20px] border-background rounded-[24px] lg:rounded-[44px] p-[20px] flex flex-col items-center">
+            <div className="outside-stroke-mobile-light bg-white border-0 lg:border-[20px] border-background rounded-[24px] lg:rounded-[44px] p-s lg:p-[20px] flex flex-col items-center">
                     <div className="w-full flex flex-col md:flex-row mb-12">
                         <div className="flex-1 flex flex-col text-left">
                             {t("eyebrow") && (
@@ -50,18 +50,18 @@ export default function WhyChooseUs({ namespace = "whyChooseUs" }: WhyChooseUsPr
                                 const pyClass = "py-6 md:py-[28px]";
 
                                 return (
-                                    <div key={key} className={`relative flex items-center justify-center text-center px-[15px] md:px-16 ${borderClass} ${desktopBorderClass} ${pyClass}`}>
+                                    <div key={key} className={`relative flex items-center justify-center text-center px-s md:px-16 ${borderClass} ${desktopBorderClass} ${pyClass}`}>
                                         {/* Decorative Corners */}
-                                        <div className="absolute top-[15px] md:top-[28px] left-[15px] md:left-[30px] text-type-brand">
+                                        <div className="absolute top-s md:top-[28px] left-s md:left-[30px] text-type-brand">
                                             <CornerBracket className="-rotate-90" />
                                         </div>
-                                        <div className="absolute top-[15px] md:top-[28px] right-[15px] md:right-[30px] text-type-brand">
+                                        <div className="absolute top-s md:top-[28px] right-s md:right-[30px] text-type-brand">
                                             <CornerBracket />
                                         </div>
-                                        <div className="absolute bottom-[15px] md:bottom-[28px] left-[15px] md:left-[30px] text-type-brand">
+                                        <div className="absolute bottom-s md:bottom-[28px] left-s md:left-[30px] text-type-brand">
                                             <CornerBracket className="rotate-180" />
                                         </div>
-                                        <div className="absolute bottom-[15px] md:bottom-[28px] right-[15px] md:right-[30px] text-type-brand">
+                                        <div className="absolute bottom-s md:bottom-[28px] right-s md:right-[30px] text-type-brand">
                                             <CornerBracket className="rotate-90" />
                                         </div>
 

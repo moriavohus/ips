@@ -36,7 +36,7 @@ export default function ProductGrid() {
 
   return (
     <SectionWrapper id="products" bg="white">
-      <div className="bg-white border-[10px] lg:border-[20px] border-background rounded-[24px] lg:rounded-[44px] p-[20px]">
+      <div className="outside-stroke-mobile-light bg-white border-0 lg:border-[20px] border-background rounded-[24px] lg:rounded-[44px] p-s lg:p-[20px]">
           <div className="mb-20">
             {t("eyebrow") && (
               <div className="text-caps-style text-type-primary mb-5">
@@ -57,17 +57,17 @@ export default function ProductGrid() {
           return (
             <div key={key} className="col-span-12 sm:col-span-6 lg:col-span-3">
               <Link href={href} className="block h-full group">
-                <div className="bg-background rounded-[16px] h-full flex flex-col pt-6 overflow-hidden transition-all duration-300">
+                <div className="bg-background rounded-[16px] h-full flex flex-col pt-s lg:pt-6 overflow-hidden transition-all duration-300">
 
                   {/* Top Indicators */}
-                  <div className="flex justify-between items-start px-6 w-full mb-0">
+                  <div className="flex justify-between items-start px-s lg:px-6 w-full mb-0">
                     <div className="w-[4px] h-[4px] bg-black mt-1.5"></div>
                     <div className="font-mono text-[12px] font-normal leading-[12px] tracking-normal text-black">{numberStr}</div>
                   </div>
 
                   {/* Icon/Image Area */}
                   <div className="flex-1 flex flex-col">
-                    <div className="w-full flex justify-center items-center h-[200px] px-6">
+                    <div className="w-full flex justify-center items-center h-[200px] px-s lg:px-6">
                       {image ? (
                         <div className="relative w-full h-[170px] lg:h-[180px]">
                           <Image src={image} alt={t(`${key}.name`)} fill className="object-contain" />
@@ -80,7 +80,7 @@ export default function ProductGrid() {
                     </div>
 
                     {/* Content Area */}
-                    <div className="px-10 pt-5 pb-[47px] flex-1 text-center">
+                    <div className="px-s pt-s pb-s lg:px-10 lg:pt-5 lg:pb-[47px] flex-1 text-center">
                       <h3 className="font-sans text-h3-bold text-type-primary mb-3">
                         {t(`${key}.name`)}
                       </h3>

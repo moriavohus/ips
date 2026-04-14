@@ -49,7 +49,7 @@ export default function ServiceDeliverables({ data }: ServiceDeliverablesProps) 
 
     return (
         <div className="container mx-auto px-m py-8 mb-20 lg:mb-32 lg:px-xl">
-            <div className="bg-white border-[10px] lg:border-[20px] border-background rounded-[24px] lg:rounded-[44px] p-[20px]">
+            <div className="outside-stroke-mobile-light bg-white border-0 lg:border-[20px] border-background rounded-[24px] lg:rounded-[44px] p-s lg:p-[20px]">
                 <div className="mb-20">
                     <span className="text-caps-mobile md:text-caps text-type-secondary uppercase mb-4 block">RESULTS</span>
                     <h2 className="text-h2-mobile md:text-h2 text-type-primary">
@@ -63,7 +63,7 @@ export default function ServiceDeliverables({ data }: ServiceDeliverablesProps) 
                         return (
                             <div
                                 key={idx}
-                                className="bg-background rounded-[16px] p-6 pt-6 pb-10 flex flex-col items-start gap-8 min-h-[200px] basis-full md:basis-[calc(33.333%-4px)] lg:basis-[var(--lg-basis)] grow"
+                                className="bg-background rounded-[16px] p-s pt-s pb-10 lg:p-6 lg:pt-6 flex flex-col items-start gap-8 min-h-[200px] basis-full md:basis-[calc(33.333%-4px)] lg:basis-[var(--lg-basis)] grow"
                                 style={{ ["--lg-basis" as string]: lgBasis }}
                             >
                                 <div className="text-type-brand">

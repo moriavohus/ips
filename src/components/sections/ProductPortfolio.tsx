@@ -143,7 +143,7 @@ export default function ProductPortfolio({ initialProduct = "cellularGlass" }: {
                         <button
                             type="button"
                             onClick={() => setDropdownOpen(!dropdownOpen)}
-                            className="w-full bg-background rounded-[12px] px-5 py-4 pr-12 font-sans text-[16px] font-medium text-type-primary uppercase tracking-[0.02em] text-left"
+                            className="w-full bg-background rounded-[12px] px-s py-s pr-12 font-sans text-[16px] font-medium text-type-primary uppercase tracking-[0.02em] text-left"
                         >
                             {t(`products.${activeProduct}.name`)}
                             <svg className={`absolute right-4 top-1/2 -translate-y-1/2 transition-transform text-type-primary ${dropdownOpen ? "rotate-180" : ""}`} width="16" height="16" viewBox="0 0 16 16" fill="none">
@@ -160,7 +160,7 @@ export default function ProductPortfolio({ initialProduct = "cellularGlass" }: {
                                             handleProductChange(key);
                                             setDropdownOpen(false);
                                         }}
-                                        className={`w-full text-left px-5 py-3 font-sans text-[14px] font-medium uppercase tracking-[0.02em] transition-colors ${activeProduct === key ? "bg-type-primary text-white" : "text-type-primary hover:bg-background"}`}
+                                        className={`w-full text-left px-s py-3 font-sans text-[14px] font-medium uppercase tracking-[0.02em] transition-colors ${activeProduct === key ? "bg-type-primary text-white" : "text-type-primary hover:bg-background"}`}
                                     >
                                         {t(`products.${key}.name`)}
                                     </button>
@@ -196,7 +196,7 @@ export default function ProductPortfolio({ initialProduct = "cellularGlass" }: {
                 </div>
 
                 {/* Right Column - Details */}
-                <div className={`bg-background rounded-[20px] p-m transition-all duration-300 ease-in-out lg:flex-1 lg:p-xl ${isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-2"}`}>
+                <div className={`bg-background rounded-[20px] p-s transition-all duration-300 ease-in-out lg:flex-1 lg:p-xl ${isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-2"}`}>
 
                     {/* STANDARD HEADER (Image + Overview) */}
                     {pData.image && pData.overviewText && (

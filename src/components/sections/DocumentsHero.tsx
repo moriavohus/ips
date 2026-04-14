@@ -14,10 +14,10 @@ export default function DocumentsHero() {
             <section className="bg-white pt-[10px] pb-[32.5px] lg:pb-[40px] min-h-[70vh] flex items-center">
                 <div className="container mx-auto">
                     {/* Grey Frame around Hero */}
-                    <div className="bg-white border-[10px] lg:border-[20px] border-background rounded-[24px] lg:rounded-[44px] relative min-h-[calc(70vh-16px)] overflow-visible flex flex-col lg:grid lg:grid-cols-12">
+                    <div className="outside-stroke-mobile-light bg-white border-0 lg:border-[20px] border-background rounded-[24px] lg:rounded-[44px] relative min-h-[calc(70vh-16px)] overflow-visible flex flex-col lg:grid lg:grid-cols-12">
 
                         {/* Left Content Column */}
-                        <div className="lg:col-span-6 p-[20px] flex flex-col relative z-10 w-full rounded-t-[24px] lg:rounded-l-[24px] lg:rounded-tr-none bg-white">
+                        <div className="lg:col-span-6 p-s lg:p-[20px] flex flex-col relative z-10 w-full rounded-t-[24px] lg:rounded-l-[24px] lg:rounded-tr-none bg-white">
                             <div className="mb-6">
                                 <Breadcrumbs
                                     items={breadcrumbParts.map((label, index) => ({

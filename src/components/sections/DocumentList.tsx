@@ -21,7 +21,7 @@ interface DocSectionProps {
 
 function DocSection({ id, num, title, subtitle, points, items, showLabel }: DocSectionProps) {
     return (
-        <div id={id} className="mb-16 lg:mb-20 last:mb-0 scroll-mt-28 flex w-full flex-col items-start gap-10 p-5 md:gap-16 md:p-10">
+        <div id={id} className="mb-16 lg:mb-20 last:mb-0 scroll-mt-28 flex w-full flex-col items-start gap-10 p-s md:gap-16 md:p-10">
             {/* Header Content */}
             <div className="w-full">
                 {showLabel && (
