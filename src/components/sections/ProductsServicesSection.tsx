@@ -1,6 +1,6 @@
 import { useTranslations } from "next-intl";
 import { Link } from "@/i18n/navigation";
-import { ChevronRight16 } from "@/components/ui/Icons";
+import { ChevronRight } from "@/components/ui/Icons";
 
 export default function ProductsServicesSection() {
     const t = useTranslations("about");
@@ -45,11 +45,11 @@ export default function ProductsServicesSection() {
 
                     <div className="bg-background rounded-[16px] p-[4px] flex flex-col md:flex-row gap-[4px]">
                         {/* Products card */}
-                        <div className="flex w-full flex-col rounded-[12px] bg-white p-l md:w-1/2">
+                        <div className="flex w-full flex-col rounded-[12px] bg-white p-[14px] md:w-1/2 md:p-l">
                             <h3 className="font-sans text-[48px] font-normal leading-[48px] tracking-[-1px] text-type-primary mb-4">
                                 {t("productsServices.productsTitle")}
                             </h3>
-                            <p className="font-sans text-[19px] font-normal leading-[1.4] text-type-secondary">
+                            <p className="text-body-mobile md:text-body text-type-secondary">
                                 {t("productsServices.productsSubtitle")}
                             </p>
                             <div className="mt-auto flex flex-col gap-2 pt-10">
@@ -57,21 +57,21 @@ export default function ProductsServicesSection() {
                                     <Link
                                         key={idx}
                                         href={productLinks[idx] || "/products"}
-                                        className="flex h-[56px] w-full items-center justify-center gap-2 rounded-[8px] bg-background px-6 text-[15px] font-medium uppercase leading-[1.1] text-type-primary transition-colors hover:bg-border-subtle"
+                                        className="flex w-full max-h-[56px] items-center justify-between rounded-[8px] bg-background p-[20px] text-button-style text-type-primary transition-colors hover:bg-border-subtle"
                                     >
                                         <span>{item}</span>
-                                        <ChevronRight16 className="shrink-0" />
+                                        <ChevronRight className="h-[10px] w-[6px] shrink-0" />
                                     </Link>
                                 ))}
                             </div>
                         </div>
 
                         {/* Services card */}
-                        <div className="flex w-full flex-col rounded-[12px] bg-white p-l md:w-1/2">
+                        <div className="flex w-full flex-col rounded-[12px] bg-white p-[14px] md:w-1/2 md:p-l">
                             <h3 className="font-sans text-[48px] font-normal leading-[48px] tracking-[-1px] text-type-primary mb-4">
                                 {t("productsServices.servicesTitle")}
                             </h3>
-                            <p className="font-sans text-[19px] font-normal leading-[1.4] text-type-secondary">
+                            <p className="text-body-mobile md:text-body text-type-secondary">
                                 {t("productsServices.servicesSubtitle")}
                             </p>
                             <div className="mt-auto flex flex-col gap-2 pt-10">
@@ -79,10 +79,10 @@ export default function ProductsServicesSection() {
                                     <Link
                                         key={idx}
                                         href={serviceLinks[idx] || "/services"}
-                                        className="flex h-[56px] w-full items-center justify-center gap-2 rounded-[8px] bg-background px-6 text-[15px] font-medium uppercase leading-[1.1] text-type-primary transition-colors hover:bg-border-subtle"
+                                        className="flex w-full max-h-[56px] items-center justify-between rounded-[8px] bg-background p-[20px] text-button-style text-type-primary transition-colors hover:bg-border-subtle"
                                     >
                                         <span>{item}</span>
-                                        <ChevronRight16 className="shrink-0" />
+                                        <ChevronRight className="h-[10px] w-[6px] shrink-0" />
                                     </Link>
                                 ))}
                             </div>

@@ -42,6 +42,17 @@ export default function Header() {
 
   const links = [
     {
+      href: "/about",
+      label: t("about"),
+      hasDropdown: true,
+      id: "about",
+      items: [
+        { label: "MISSION & VISION", href: "/about" },
+        { label: "VALUES", href: "/about" },
+        { label: "GLOBAL NETWORK", href: "/about" },
+      ],
+    },
+    {
       href: "/products",
       label: t("products"),
       hasDropdown: true,
@@ -85,17 +96,6 @@ export default function Header() {
       ],
     },
     {
-      href: "/about",
-      label: t("about"),
-      hasDropdown: true,
-      id: "about",
-      items: [
-        { label: "MISSION & VISION", href: "/about" },
-        { label: "VALUES", href: "/about" },
-        { label: "GLOBAL NETWORK", href: "/about" },
-      ],
-    },
-    {
       href: "/documents",
       label: t("documents"),
       hasDropdown: true,
@@ -113,13 +113,13 @@ export default function Header() {
     <header className="sticky top-0 z-40 bg-transparent">
       <div className="w-full px-0 pt-0 pb-0 xl:container xl:mx-auto xl:pt-4 xl:pb-2 xl:px-4">
         <div
-          className="rounded-none xl:rounded-[14px] flex items-center justify-between h-[78px] p-2 xl:p-1 gap-2 transition-all"
+          className="rounded-none xl:rounded-[14px] flex items-center justify-between h-[78px] p-[8px] xl:p-1 gap-2 transition-all"
           style={{ backgroundColor: "var(--MenuGlass)", backdropFilter: "blur(20px)" }}
         >
           {/* Logo + Mobile CTA */}
           <div className="flex items-center h-full gap-2 xl:gap-0">
             <Link href="/" className="flex items-center h-full shrink-0">
-              <div className="w-[133px] h-[70px] bg-white rounded-[10px] flex items-center justify-center">
+              <div className="w-[133px] h-full bg-white rounded-[10px] flex items-center justify-center">
                 <div className="relative w-[80px] xl:w-[90px] h-[36px] xl:h-[40px]">
                   <Image
                     src="/images/Navbar/5/Frame-2085664158.svg"

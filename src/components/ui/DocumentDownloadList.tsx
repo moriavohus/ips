@@ -14,7 +14,7 @@ type Props = {
 
 export default function DocumentDownloadList({ items }: Props) {
   return (
-    <div className="bg-background rounded-[12px] p-1 flex flex-col items-start gap-1 self-stretch">
+    <div className="bg-background rounded-[12px] p-[4px] flex flex-col items-start gap-[4px] self-stretch">
       {items.map((item, i) => (
         <DocumentDownloadButton
           key={i}

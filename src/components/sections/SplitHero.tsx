@@ -8,7 +8,9 @@ import { scrollToContactForm } from "@/lib/utils";
 interface SplitHeroProps {
   breadcrumb: ReactNode;
   title: string;
-  subtitle: string;
+  subtitle?: string;
+  titleClassName?: string;
+  imageWrapperClassName?: string;
   ctaText?: string;
   ctaHref?: string;
   onCtaClick?: () => void;
@@ -21,6 +23,8 @@ export default function SplitHero({
   breadcrumb,
   title,
   subtitle,
+  titleClassName,
+  imageWrapperClassName,
   ctaText,
   ctaHref,
   onCtaClick,
@@ -31,10 +35,10 @@ export default function SplitHero({
   return (
     <section className="bg-white pt-[10px] pb-[32.5px] lg:pb-[40px] min-h-[70vh] flex items-center">
         <div className="container mx-auto">
-          <div className="outside-stroke-mobile-light bg-white border-0 lg:border-[20px] border-background rounded-[24px] lg:rounded-[44px] relative min-h-[calc(70vh-16px)] overflow-visible flex flex-col lg:grid lg:grid-cols-12">
+          <div className="outside-stroke-mobile-light bg-white border-0 lg:border-[20px] border-background rounded-[24px] lg:rounded-[44px] relative min-h-[calc(70vh-16px)] overflow-visible flex flex-col gap-[40px] p-[14px] lg:grid lg:grid-cols-12 lg:gap-0 lg:p-0">
 
           {/* Left Content Column */}
-          <div className="lg:col-span-6 p-s lg:p-[20px] flex flex-col relative z-10 w-full rounded-t-[24px] lg:rounded-l-[24px] lg:rounded-tr-none bg-white">
+          <div className="order-2 lg:order-1 lg:col-span-6 px-0 pt-0 lg:p-[20px] flex flex-col justify-center items-start relative z-10 w-full rounded-t-[24px] lg:rounded-l-[24px] lg:rounded-tr-none bg-white">
             <div className="mb-[20px] lg:mb-16">
               {typeof breadcrumb === "string" ? (
                 <span className="text-caps-style text-type-primary">{breadcrumb}</span>
@@ -44,15 +48,19 @@ export default function SplitHero({
             </div>
 
             <div className="flex-1">
-              <h1 className="font-sans text-[36px] md:text-[46px] xl:text-[58px] font-normal leading-[1] tracking-[-0.02em] text-type-primary mb-6 lg:mb-8">
+              <h1 className={titleClassName ?? "font-sans text-[36px] md:text-[46px] xl:text-[58px] font-normal leading-[1] tracking-[-0.02em] text-type-primary mb-6 lg:mb-8"}>
                 {title}
               </h1>
 
-              <div className="w-full h-[1px] bg-black-thout mb-6 lg:mb-8"></div>
+              {subtitle ? (
+                <>
+                  <div className="w-full h-[1px] bg-black-thout mb-6 lg:mb-8"></div>
 
-              <p className="font-sans text-body font-normal leading-[1.4] tracking-normal text-type-primary max-w-[640px]">
-                {subtitle}
-              </p>
+                  <p className="font-sans text-body font-normal leading-[1.4] tracking-normal text-type-primary max-w-[640px]">
+                    {subtitle}
+                  </p>
+                </>
+              ) : null}
             </div>
 
             {ctaText && (ctaHref || onCtaClick) && (
@@ -84,13 +92,13 @@ export default function SplitHero({
           </div>
 
           {/* Right Image Column */}
-          <div className="lg:col-span-6 relative h-[400px] lg:h-auto min-h-full">
-            <div className="absolute inset-x-s bottom-s top-[20px] overflow-hidden rounded-[14px] lg:inset-[20px]">
+          <div className="order-1 lg:order-2 lg:col-span-6 relative h-[320px] lg:h-auto min-h-full w-full">
+            <div className={imageWrapperClassName ?? "relative h-full w-full overflow-hidden rounded-[14px] lg:absolute lg:inset-[20px] lg:h-auto lg:w-auto"}>
               <Image
                 src={imageSrc}
                 alt={imageAlt}
                 fill
-                className={imageFit === "contain" ? "object-contain p-4 xl:p-6" : "object-cover object-center mix-blend-multiply"}
+                className={imageFit === "contain" ? "object-cover lg:object-contain lg:p-4 xl:p-6" : "object-cover object-center mix-blend-multiply"}
                 priority
               />
             </div>

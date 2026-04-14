@@ -56,7 +56,7 @@ export default function PerformanceMetrics({
 
         return (
         <div key={`${item.title}-${index}`} className="bg-background rounded-[8px] flex flex-col min-h-[160px] md:min-h-[180px] p-s lg:p-8 justify-between">
-          <div className="text-type-brand">
+          <div className="flex h-[80px] items-center text-type-brand">
             {item.icon ? (
               <div className="relative h-8 w-8">
                 <Image src={item.icon} alt="" fill className="object-contain" />

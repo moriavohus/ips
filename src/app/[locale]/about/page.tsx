@@ -61,25 +61,25 @@ export default function AboutPage() {
       <FloatingDownloadButton />
 
       {/* MISSION & VISION */}
-      <section className="bg-background py-[112px]">
+      <section id="mission" className="bg-background py-[112px] scroll-mt-24">
         <div className="container mx-auto px-5 lg:px-10">
           <div className="flex flex-col gap-12 lg:gap-16">
             <div className="flex flex-col lg:flex-row gap-4 lg:gap-16">
               <div className="lg:w-1/4">
-                <span className="font-sans text-[32px] font-semibold leading-[36px] tracking-[-1px] text-type-primary">{t("mission.eyebrow")}</span>
+                <span className="heading-h3-bold text-type-primary">{t("mission.eyebrow")}</span>
               </div>
               <div className="lg:w-3/4">
-                <p className="font-sans text-[48px] font-normal leading-[48px] tracking-[-1px] text-type-primary">
+                <p className="heading-h2 text-type-primary">
                   {t("mission.text")}
                 </p>
               </div>
             </div>
             <div className="flex flex-col lg:flex-row gap-4 lg:gap-16">
               <div className="lg:w-1/4">
-                <span className="font-sans text-[32px] font-semibold leading-[36px] tracking-[-1px] text-type-primary">{t("vision.eyebrow")}</span>
+                <span className="heading-h3-bold text-type-primary">{t("vision.eyebrow")}</span>
               </div>
               <div className="lg:w-3/4">
-                <p className="font-sans text-[48px] font-normal leading-[48px] tracking-[-1px] text-type-primary">
+                <p className="heading-h2 text-type-primary">
                   {t("vision.text")}
                 </p>
               </div>
@@ -89,7 +89,7 @@ export default function AboutPage() {
       </section>
 
       {/* CORE VALUES */}
-      <section className="bg-white py-[40px]">
+      <section id="values" className="bg-white py-[40px] scroll-mt-24">
         <div className="container mx-auto lg:px-10">
           <div>
               <h2 className="font-sans text-[32px] md:text-[46.5px] font-normal leading-[1.1] tracking-[-1.44px] text-black mb-10 lg:mb-14">
@@ -116,13 +116,13 @@ export default function AboutPage() {
                         />
                       </div>
                       <div className="px-[28px] pb-[28px]">
-                        <div className="flex items-center gap-3 mt-[28px] mb-[20px]">
-                          <span className="font-sans text-[22px] font-normal leading-[1.4] text-type-primary">{num}</span>
-                          <h3 className="font-sans text-[48px] font-semibold leading-[48px] tracking-[-1px] text-type-primary">
+                        <div className="mt-[28px] mb-[20px] flex w-[284px] flex-col items-start justify-center gap-[8px]">
+                          <span className="text-h4 text-type-primary">{num}</span>
+                          <h3 className="text-h2-bold-mobile md:text-h2-bold text-type-primary">
                             {item.title}
                           </h3>
                         </div>
-                        <p className="font-sans text-[22px] font-normal leading-[1.4] text-type-secondary">
+                        <p className="text-body-mobile md:text-h4 text-type-secondary">
                           {item.description}
                         </p>
                       </div>
@@ -135,7 +135,9 @@ export default function AboutPage() {
       </section>
 
       <ProductsServicesSection />
-      <GlobalNetwork />
+      <section id="network" className="scroll-mt-24">
+        <GlobalNetwork />
+      </section>
       <CertificationsBar />
 
       <ContactFooterSequence />

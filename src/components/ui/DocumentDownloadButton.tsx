@@ -15,14 +15,14 @@ export default function DocumentDownloadButton({ title, meta, url }: Props) {
       download={url && url !== "#" ? true : undefined}
       target={url && url !== "#" ? "_blank" : undefined}
       rel={url && url !== "#" ? "noopener noreferrer" : undefined}
-      className="group flex items-center justify-between self-stretch rounded-[8px] bg-white p-7 gap-5 transition-all"
+      className="group flex self-stretch flex-col items-start justify-center gap-[20px] rounded-[8px] bg-white p-[14px] transition-all md:flex-row md:items-center md:justify-between md:p-[28px]"
       style={{ backdropFilter: "blur(5.15px)" }}
     >
-      <span className="font-sans text-[24px] md:text-[32px] font-semibold text-type-primary leading-[36px] tracking-[-1px] group-hover:text-type-brand transition-colors">
+      <span className="text-h3-mobile md:text-h3-bold text-type-primary group-hover:text-type-brand transition-colors">
         {title}
       </span>
 
-      <div className="flex items-center gap-4 shrink-0">
+      <div className="flex items-center justify-between self-stretch shrink-0 md:min-w-[200px] md:self-auto">
         <span className="font-sans text-[14px] font-bold text-type-primary uppercase leading-[1.1]">
           {meta.replace("MB", "МБ")}
         </span>

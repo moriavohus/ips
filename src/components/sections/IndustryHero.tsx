@@ -66,7 +66,7 @@ export default function IndustryHero({ data }: IndustryHeroProps) {
 
                     </div>
 
-                    <div className="lg:col-span-4 flex flex-1 flex-col items-start justify-between self-stretch">
+                    <div className="lg:col-span-4 flex flex-1 flex-col items-start gap-[40px] lg:justify-between self-stretch">
                         <p className="font-sans text-[19px] text-white font-normal leading-[1.4] max-w-[600px] opacity-90">
                             {data.heroText}
                         </p>

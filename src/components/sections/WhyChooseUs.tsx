@@ -81,7 +81,7 @@ export default function WhyChooseUs({ namespace = "whyChooseUs" }: WhyChooseUsPr
                     {/* Action Button */}
                     <Link
                         href="/about"
-                        className="bg-type-brand hover:bg-black transition-colors text-white font-sans text-[16px] md:text-[18px] font-medium leading-[1.1] tracking-[0.02em] uppercase px-[30px] md:px-[40px] py-[16px] md:py-[20px] rounded-[14px] flex items-center justify-center gap-2 w-fit"
+                        className="bg-type-brand hover:bg-black transition-colors text-white font-sans text-[16px] md:text-[18px] font-medium leading-[1.1] tracking-[0.02em] uppercase px-[30px] md:px-[40px] py-[16px] md:py-[20px] rounded-[14px] flex items-center justify-center gap-2 w-full md:w-fit"
                     >
                         {t("button")}
                     </Link>

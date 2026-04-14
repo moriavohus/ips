@@ -8,6 +8,14 @@ export default function Footer() {
 
   const columns = [
     {
+      title: t("about"),
+      links: [
+        { href: "/about#mission", label: t("links.about.mission") },
+        { href: "/about#values", label: t("links.about.values") },
+        { href: "/about#network", label: t("links.about.network") },
+      ],
+    },
+    {
       title: t("products"),
       links: [
         { href: "/products/cellular-glass", label: t("links.products.cellularGlass") },
@@ -43,14 +51,6 @@ export default function Footer() {
       ],
     },
     {
-      title: t("about"),
-      links: [
-        { href: "/about#mission", label: t("links.about.mission") },
-        { href: "/about#values", label: t("links.about.values") },
-        { href: "/about#network", label: t("links.about.network") },
-      ],
-    },
-    {
       title: t("documents"),
       links: [
         { href: "/documents#datasheets", label: t("links.documents.datasheets") },
@@ -83,7 +83,7 @@ export default function Footer() {
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-6 gap-x-8 gap-y-12">
           {columns.map((col, idx) => (
             <div key={idx} className="flex flex-col">
-              <h3 className="text-caps-mobile md:text-caps font-medium tracking-[0.05em] uppercase text-white mb-6 md:mb-8">
+              <h3 className="text-button-style text-white mb-6 md:mb-8">
                 {col.title}
               </h3>
               <ul className="flex flex-col gap-4">

@@ -7,7 +7,7 @@ export default function DirectEmail() {
 
     return (
         <section id="direct-email" className="bg-background overflow-hidden">
-            <div className="container mx-auto flex w-full max-w-[1920px] flex-col items-start gap-12 px-5 py-[80px] lg:flex-row lg:gap-[160px] lg:px-[40px] lg:py-[80px]">
+            <div className="container mx-auto flex w-full max-w-[1920px] flex-col items-start gap-12 px-[20px] py-[40px] lg:flex-row lg:gap-[160px] lg:px-[40px] lg:py-[80px]">
 
                 {/* Left Side */}
                 <div className="flex w-full flex-1 flex-col items-start">
@@ -25,7 +25,7 @@ export default function DirectEmail() {
 
                 {/* Right Side */}
                 <div className="flex w-full flex-1 flex-col justify-center">
-                    <div className="heading-h4 text-type-primary mb-4">
+                    <div className="font-sans text-body-mobile md:text-h4 text-type-primary mb-4">
                         {t("includeText")}
                     </div>
                     <ul className="list-disc pl-5 space-y-1 md:space-y-2 heading-h4 text-type-primary marker:text-type-primary">

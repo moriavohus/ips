@@ -128,13 +128,13 @@ export default function ManufacturingPage() {
                     {/* Grey background with two white cards on top */}
                     <div className="bg-background rounded-[10px] p-[4px] flex flex-col md:flex-row gap-[4px]">
                         {/* Left card — Specifications */}
-                        <div className="w-full md:w-1/2 bg-white rounded-[6px] p-7 lg:p-9 xl:p-10">
-                            <h3 className="text-h2-mobile md:text-h2 text-type-primary mb-[116px]">
+                        <div className="w-full md:w-1/2 bg-white rounded-[6px] p-[14px]">
+                            <h3 className="text-h2-mobile md:text-h2 text-type-primary mb-[40px]">
                                 {t("specs.col1")}
                             </h3>
                             <div className="flex flex-col gap-5">
                                 {specItems.map((item, idx) => (
-                                    <div key={`left-${idx}`} className="text-caps-mobile md:text-caps text-black uppercase">
+                                    <div key={`left-${idx}`} className="text-button-style text-black">
                                         {item.left}
                                     </div>
                                 ))}
@@ -142,13 +142,13 @@ export default function ManufacturingPage() {
                         </div>
 
                         {/* Right card — How we achieve it */}
-                        <div className="w-full md:w-1/2 bg-white rounded-[6px] p-7 lg:p-9 xl:p-10">
-                            <h3 className="text-h2-mobile md:text-h2 text-type-primary mb-[116px]">
+                        <div className="w-full md:w-1/2 bg-white rounded-[6px] p-[14px]">
+                            <h3 className="text-h2-mobile md:text-h2 text-type-primary mb-[40px]">
                                 {t("specs.col2")}
                             </h3>
                             <div className="flex flex-col gap-5">
                                 {specItems.map((item, idx) => (
-                                    <div key={`right-${idx}`} className="text-caps-mobile md:text-caps text-black uppercase">
+                                    <div key={`right-${idx}`} className="text-button-style text-black">
                                         {item.right}
                                     </div>
                                 ))}

@@ -13,10 +13,11 @@ export default function CTASection({ variant = "default", pageVariant = "default
   // const tf = useTranslations("footer");
 
   const topPaddingClass = "pt-xxxl";
+  const containerGapClass = variant === "industry" ? "gap-[40px] md:gap-20 lg:gap-0" : "gap-40 md:gap-20 lg:gap-0";
 
   return (
     <section id="contact" className="bg-black-primary overflow-hidden">
-      <div className={`container mx-auto flex w-full max-w-[1920px] flex-col items-center gap-40 px-5 pb-xxxl md:gap-20 lg:gap-0 lg:px-10 ${topPaddingClass}`}>
+      <div className={`container mx-auto flex w-full max-w-[1920px] flex-col items-center ${containerGapClass} px-5 pb-xxxl lg:px-10 ${topPaddingClass}`}>
         {variant === "industry" && (
           <div className="w-full pb-12 md:pb-16">
             <p className="w-full font-sans text-[40px] md:text-[48px] font-normal leading-[1] tracking-[-1px] text-white">

@@ -21,7 +21,7 @@ interface DocSectionProps {
 
 function DocSection({ id, num, title, subtitle, points, items, showLabel }: DocSectionProps) {
     return (
-        <div id={id} className="mb-16 lg:mb-20 last:mb-0 scroll-mt-28 flex w-full flex-col items-start gap-10 p-s md:gap-16 md:p-10">
+        <div id={id} className="mb-16 lg:mb-20 last:mb-0 scroll-mt-28 flex w-full flex-col items-start gap-[40px] p-[20px] md:gap-16 md:p-10">
             {/* Header Content */}
             <div className="w-full">
                 {showLabel && (
@@ -37,7 +37,7 @@ function DocSection({ id, num, title, subtitle, points, items, showLabel }: DocS
                     </h2>
                 </div>
 
-                <p className="font-sans text-[19px] font-normal text-type-primary leading-[1.4] mb-2 max-w-[800px]">
+                <p className="text-body-mobile md:text-body text-type-primary mb-2 max-w-[800px]">
                     {subtitle}
                 </p>
 
@@ -45,7 +45,7 @@ function DocSection({ id, num, title, subtitle, points, items, showLabel }: DocS
                     <p className="text-body-mobile md:text-body text-type-primary mb-2">Each datasheet includes:</p>
                     <ul className="space-y-1">
                         {points.map((pt, i) => (
-                            <li key={i} className="flex items-baseline gap-3 font-sans text-[19px] font-normal text-type-primary leading-[1.4]">
+                            <li key={i} className="flex items-baseline gap-3 text-body-mobile md:text-body text-type-primary">
                                 <span className="block w-[5px] h-[5px] bg-black rounded-full shrink-0 relative top-[2px]"></span>
                                 {pt}
                             </li>
@@ -55,7 +55,7 @@ function DocSection({ id, num, title, subtitle, points, items, showLabel }: DocS
             </div>
 
             {/* Document Cards in Grey Frame */}
-            <div className="w-full">
+            <div className="w-full self-stretch">
                 <DocumentDownloadList items={items} />
             </div>
         </div>
@@ -87,8 +87,8 @@ export default function DocumentList() {
                 })}
 
                 <div className="w-full flex justify-center">
-                    <div className="w-full flex justify-center items-center gap-2 px-10 py-6 border-t border-black-third">
-                        <p className="font-sans text-[19px] font-normal text-type-primary leading-[1.4] whitespace-pre-line">
+                    <div className="w-full self-stretch border-t border-black-third px-[40px] py-[20px]">
+                        <p className="w-full text-body-mobile md:text-body text-type-primary whitespace-pre-line">
                             {useTranslations("documents")("footerNotice")}
                         </p>
                     </div>
