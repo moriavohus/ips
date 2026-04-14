@@ -63,6 +63,19 @@
     @apply py-[32.5px] lg:py-10;
   }
 
+  .viewport-shell {
+    width: calc(100vw - 40px);
+    max-width: 1840px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  @media (min-width: 1024px) {
+    .viewport-shell {
+      width: calc(100vw - 80px);
+    }
+  }
+
   /* Typography utilities — Figma specs */
   .heading-h1 {
     @apply font-sans text-h1-mobile md:text-h1;

@@ -4,15 +4,44 @@ import { useTranslations } from "next-intl";
 import ServiceHero from "@/components/sections/ServiceHero";
 import ServiceScope from "@/components/sections/ServiceScope";
 import ServiceProcess from "@/components/sections/ServiceProcess";
-import ServiceDeliverables from "@/components/sections/ServiceDeliverables";
 import ServicesBlock from "@/components/sections/ServicesBlock";
 import CertificationsBar from "@/components/sections/CertificationsBar";
 import PerformanceMetrics from "@/components/sections/PerformanceMetrics";
 import ContactFooterSequence from "@/components/sections/ContactFooterSequence";
 import FooterTextSection from "@/components/sections/FooterTextSection";
+import {
+    CalcIcon, TempIcon, MoistureIcon, StructIcon, DocIcon, CheckIcon,
+    TargetIcon, NetworkIcon, PersonIcon, SnowflakeIcon, GearIcon,
+    CaretIcon, GridIcon, WrenchIcon, ArrowDiagIcon, MonitorIcon,
+    ToolsIcon, ClipboardIcon, ChartIcon, PipesIcon,
+} from "@/components/ui/Icons";
+import { ComponentType, SVGProps } from "react";
 
 export default function ServiceContent({ serviceKey, slug }: { serviceKey: string; slug: string }) {
     const t = useTranslations(`services.${serviceKey}`);
+
+    const iconMap: Record<string, ComponentType<SVGProps<SVGSVGElement>>> = {
+        calc: CalcIcon,
+        temp: TempIcon,
+        moisture: MoistureIcon,
+        struct: StructIcon,
+        doc: DocIcon,
+        done: CheckIcon,
+        target: TargetIcon,
+        network: NetworkIcon,
+        person: PersonIcon,
+        snowflake: SnowflakeIcon,
+        gear: GearIcon,
+        caret: CaretIcon,
+        grid: GridIcon,
+        wrench: WrenchIcon,
+        arrow: ArrowDiagIcon,
+        monitor: MonitorIcon,
+        tools: ToolsIcon,
+        clipboard: ClipboardIcon,
+        chart: ChartIcon,
+        pipes: PipesIcon,
+    };
 
     const showAiCard = slug === "design-calculation";
 
@@ -40,6 +69,11 @@ export default function ServiceContent({ serviceKey, slug }: { serviceKey: strin
         items: t.raw("deliverables.items")
     };
 
+    const deliverablesMetrics = deliverablesData.items.map((item: { title: string; icon: string }) => ({
+        title: item.title,
+        Icon: iconMap[item.icon] || DocIcon,
+    }));
+
     return (
         <main className="bg-white">
             <ServiceHero data={heroData} />
@@ -48,7 +82,12 @@ export default function ServiceContent({ serviceKey, slug }: { serviceKey: strin
 
             <ServiceProcess data={processData} className="pt-0" />
 
-            <ServiceDeliverables data={deliverablesData} />
+            <PerformanceMetrics
+                customEyebrow="RESULTS"
+                customTitle={deliverablesData.title}
+                customItems={deliverablesMetrics}
+                columnsClassName="grid-cols-1 sm:grid-cols-2 lg:grid-cols-5"
+            />
 
             <CertificationsBar />
 

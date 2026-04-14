@@ -12,11 +12,11 @@ export default function CTASection({ variant = "default" }: CTASectionProps) {
   // const tf = useTranslations("footer");
 
   return (
-    <section id="contact" className="bg-black-primary section-padding overflow-hidden">
-      <div className="container mx-auto flex w-full max-w-[1920px] flex-col items-center gap-40 px-5 py-5 md:gap-20 md:py-10 lg:gap-0 lg:px-10">
+    <section id="contact" className="bg-black-primary overflow-hidden pb-[32.5px] lg:pb-10">
+      <div className="container mx-auto flex w-full max-w-[1920px] flex-col items-center gap-40 px-5 pb-5 pt-0 md:gap-20 md:pb-10 md:pt-0 lg:gap-0 lg:px-10">
         {variant === "industry" && (
-          <div className="w-full pt-16 md:pt-20 lg:pt-24 pb-12 md:pb-16">
-            <p className="font-sans text-[32px] md:text-[44px] lg:text-[56px] font-normal leading-[1.15] tracking-[-1.44px] text-white max-w-[1100px]">
+          <div className="w-full py-12 md:py-16">
+            <p className="w-full font-sans text-[40px] md:text-[48px] font-normal leading-[1] tracking-[-1px] text-white">
               {t("industryHeadline")}
             </p>
           </div>

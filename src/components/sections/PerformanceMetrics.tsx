@@ -1,5 +1,4 @@
 import { useTranslations } from "next-intl";
-import SectionWrapper from "@/components/ui/SectionWrapper";
 import { LightningIcon, UserStarIcon, PinIcon, ThermoIcon } from "@/components/ui/Icons";
 import Image from "next/image";
 
@@ -18,14 +17,18 @@ type MetricItem = {
 
 interface PerformanceMetricsProps {
   hideHeader?: boolean;
+  customEyebrow?: string;
   customTitle?: string;
   customItems?: MetricItem[];
+  columnsClassName?: string;
 }
 
 export default function PerformanceMetrics({
   hideHeader = false,
+  customEyebrow,
   customTitle,
   customItems,
+  columnsClassName,
 }: PerformanceMetricsProps) {
   const t = useTranslations("metrics");
 
@@ -35,8 +38,10 @@ export default function PerformanceMetrics({
     Icon,
   }));
 
+  const gridClasses = columnsClassName ?? "grid-cols-1 sm:grid-cols-2 lg:grid-cols-4";
+
   const GridContent = (
-    <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-[4px]">
+    <div className={`grid ${gridClasses} gap-[4px]`}>
       {resolvedItems.map((item, index) => {
         const [valueText, labelText] = customItems
           ? ["", item.title]
@@ -50,7 +55,7 @@ export default function PerformanceMetrics({
                 <Image src={item.icon} alt="" fill className="object-contain" />
               </div>
             ) : item.Icon ? (
-              <item.Icon />
+              <item.Icon className="h-6 w-6" />
             ) : null}
           </div>
           <div className="flex flex-col gap-2 md:gap-3">
@@ -78,8 +83,10 @@ export default function PerformanceMetrics({
   if (hideHeader) {
     return (
       <section className="bg-white py-[20px]">
-        <div className="container mx-auto relative">
-          {GridContent}
+        <div className="w-full px-5 lg:px-10">
+          <div className="relative w-full">
+            {GridContent}
+          </div>
         </div>
       </section>
     );
@@ -87,12 +94,13 @@ export default function PerformanceMetrics({
 
   // Дефолтное поведение (Главная страница) — с серой оберткой и заголовком
   return (
-    <SectionWrapper id="metrics" bg="white">
-      <div className="bg-white border-[10px] lg:border-[20px] border-background rounded-[24px] lg:rounded-[44px] p-[20px] flex flex-col">
+    <section id="metrics" className="section-padding overflow-hidden bg-white">
+      <div className="w-full px-5 lg:px-10">
+        <div className="bg-white border-[10px] lg:border-[20px] border-background rounded-[24px] lg:rounded-[44px] p-[20px] flex flex-col">
           <div className="flex flex-col mb-16 md:mb-[80px]">
-            {t("eyebrow") && (
+            {(customEyebrow ?? t("eyebrow")) && (
               <div className="font-sans text-[16px] font-medium text-type-secondary leading-[1.1] uppercase mb-4">
-                {t("eyebrow")}
+                {customEyebrow ?? t("eyebrow")}
               </div>
             )}
             <h2 className="font-sans text-[32px] md:text-[48px] font-normal leading-[1] tracking-[-1px] text-type-primary mb-4">
@@ -106,8 +114,8 @@ export default function PerformanceMetrics({
           </div>
 
           {GridContent}
-
+        </div>
       </div>
-    </SectionWrapper>
+    </section>
   );
 }

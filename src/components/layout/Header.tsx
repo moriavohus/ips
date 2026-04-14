@@ -222,15 +222,14 @@ export default function Header() {
           {/* Right Action Area */}
           <div className="flex items-center justify-end h-full gap-2">
             {/* Desktop: Contact button */}
-            <button
-              type="button"
-              onClick={scrollToContactForm}
+            <Link
+              href="/contact"
               className="hidden xl:block h-full desktop-contact w-[211px] bg-black-primary hover:bg-black-secondary text-white rounded-[10px] font-sans text-nav-link font-normal transition-colors"
             >
               <span className="w-[211px] h-[70px] flex items-center justify-center">
                 {t("contact")}
               </span>
-            </button>
+            </Link>
 
             {/* Mobile Menu Toggle */}
             <button
@@ -341,16 +340,15 @@ export default function Header() {
 
             {/* Bottom actions */}
             <div className="w-full mt-10 flex flex-col items-center gap-4 pb-10">
-              <button
-                type="button"
-                onClick={() => {
-                  closeMobileMenu();
-                  setTimeout(scrollToContactForm, 320);
-                }}
+              <Link
+                href="/contact"
+                onClick={closeMobileMenu}
                 className="bg-black-primary text-white w-full h-[56px] rounded-[10px] font-sans text-[16px] font-medium uppercase tracking-[0.02em]"
               >
+                <span className="flex h-full w-full items-center justify-center">
                   {t("contact")}
-              </button>
+                </span>
+              </Link>
               <a
                 href="/docs/technical-data-sheet.pdf"
                 onClick={closeMobileMenu}

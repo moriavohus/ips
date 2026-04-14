@@ -37,53 +37,55 @@ export default function ProductsServicesSection() {
 
     return (
         <section className="bg-white py-[20px]">
-            <div className="container mx-auto">
-                <h2 className="font-sans text-[48px] font-normal leading-[48px] tracking-[-1px] text-type-primary mt-[80px] mb-[40px]">
-                    {t("whyTrusted.title")}
-                </h2>
+            <div className="w-full px-5 lg:px-10">
+                <div className="w-full">
+                    <h2 className="font-sans text-[48px] font-normal leading-[48px] tracking-[-1px] text-type-primary mt-[80px] mb-[40px]">
+                        {t("whyTrusted.title")}
+                    </h2>
 
-                <div className="bg-background rounded-[16px] p-[4px] flex flex-col md:flex-row gap-[4px]">
-                    {/* Products card */}
-                    <div className="w-full md:w-1/2 bg-white rounded-[12px] px-8 lg:px-10 xl:px-12 py-[24px] flex flex-col">
-                        <h3 className="font-sans text-[48px] font-normal leading-[48px] tracking-[-1px] text-type-primary mb-4">
-                            {t("productsServices.productsTitle")}
-                        </h3>
-                        <p className="font-sans text-[19px] font-normal leading-[1.4] text-type-secondary">
-                            {t("productsServices.productsSubtitle")}
-                        </p>
-                        <div className="flex flex-col gap-3 mt-auto pt-10">
-                            {products.map((item, idx) => (
-                                <Link
-                                    key={idx}
-                                    href={productLinks[idx] || "/products"}
-                                    className="flex items-center justify-center gap-2 bg-background hover:bg-border-subtle transition-colors rounded-[8px] py-4 px-6 text-[15px] font-medium text-type-primary uppercase leading-[1.1]"
-                                >
-                                    <span>{item}</span>
-                                    <ChevronRight16 className="shrink-0" />
-                                </Link>
-                            ))}
+                    <div className="bg-background rounded-[16px] p-[4px] flex flex-col md:flex-row gap-[4px]">
+                        {/* Products card */}
+                        <div className="w-full md:w-1/2 bg-white rounded-[12px] px-8 lg:px-10 xl:px-12 py-[24px] flex flex-col">
+                            <h3 className="font-sans text-[48px] font-normal leading-[48px] tracking-[-1px] text-type-primary mb-4">
+                                {t("productsServices.productsTitle")}
+                            </h3>
+                            <p className="font-sans text-[19px] font-normal leading-[1.4] text-type-secondary">
+                                {t("productsServices.productsSubtitle")}
+                            </p>
+                            <div className="mt-auto flex flex-col gap-2 pt-10">
+                                {products.map((item, idx) => (
+                                    <Link
+                                        key={idx}
+                                        href={productLinks[idx] || "/products"}
+                                        className="flex h-[56px] w-full items-center justify-center gap-2 rounded-[8px] bg-background px-6 text-[15px] font-medium uppercase leading-[1.1] text-type-primary transition-colors hover:bg-border-subtle"
+                                    >
+                                        <span>{item}</span>
+                                        <ChevronRight16 className="shrink-0" />
+                                    </Link>
+                                ))}
+                            </div>
                         </div>
-                    </div>
 
-                    {/* Services card */}
-                    <div className="w-full md:w-1/2 bg-white rounded-[12px] px-8 lg:px-10 xl:px-12 py-[24px] flex flex-col">
-                        <h3 className="font-sans text-[48px] font-normal leading-[48px] tracking-[-1px] text-type-primary mb-4">
-                            {t("productsServices.servicesTitle")}
-                        </h3>
-                        <p className="font-sans text-[19px] font-normal leading-[1.4] text-type-secondary">
-                            {t("productsServices.servicesSubtitle")}
-                        </p>
-                        <div className="flex flex-col gap-3 mt-auto pt-10">
-                            {services.map((item, idx) => (
-                                <Link
-                                    key={idx}
-                                    href={serviceLinks[idx] || "/services"}
-                                    className="flex items-center justify-center gap-2 bg-background hover:bg-border-subtle transition-colors rounded-[8px] py-4 px-6 text-[15px] font-medium text-type-primary uppercase leading-[1.1]"
-                                >
-                                    <span>{item}</span>
-                                    <ChevronRight16 className="shrink-0" />
-                                </Link>
-                            ))}
+                        {/* Services card */}
+                        <div className="w-full md:w-1/2 bg-white rounded-[12px] px-8 lg:px-10 xl:px-12 py-[24px] flex flex-col">
+                            <h3 className="font-sans text-[48px] font-normal leading-[48px] tracking-[-1px] text-type-primary mb-4">
+                                {t("productsServices.servicesTitle")}
+                            </h3>
+                            <p className="font-sans text-[19px] font-normal leading-[1.4] text-type-secondary">
+                                {t("productsServices.servicesSubtitle")}
+                            </p>
+                            <div className="mt-auto flex flex-col gap-2 pt-10">
+                                {services.map((item, idx) => (
+                                    <Link
+                                        key={idx}
+                                        href={serviceLinks[idx] || "/services"}
+                                        className="flex h-[56px] w-full items-center justify-center gap-2 rounded-[8px] bg-background px-6 text-[15px] font-medium uppercase leading-[1.1] text-type-primary transition-colors hover:bg-border-subtle"
+                                    >
+                                        <span>{item}</span>
+                                        <ChevronRight16 className="shrink-0" />
+                                    </Link>
+                                ))}
+                            </div>
                         </div>
                     </div>
                 </div>
