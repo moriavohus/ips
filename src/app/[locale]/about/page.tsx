@@ -89,14 +89,14 @@ export default function AboutPage() {
       </section>
 
       {/* CORE VALUES */}
-      <section className="bg-white py-[20px]">
+      <section className="bg-white py-[40px]">
         <div className="container mx-auto lg:px-10">
           <div>
               <h2 className="font-sans text-[32px] md:text-[46.5px] font-normal leading-[1.1] tracking-[-1.44px] text-black mb-10 lg:mb-14">
                 {t("coreValues.title")}
               </h2>
 
-              <div className="bg-background rounded-[14px] p-[6px] grid grid-cols-1 md:grid-cols-2 gap-[6px]">
+              <div className="bg-background rounded-[12px] p-[4px] grid grid-cols-1 md:grid-cols-2 gap-[4px]">
                 {coreValues.map((item, index) => {
                   const images = [
                     "/images/about/0e13d6fe262e56e5e72b62b1da56e484315938c6.png",
@@ -106,7 +106,7 @@ export default function AboutPage() {
                   ];
                   const num = String(index + 1).padStart(2, "0");
                   return (
-                    <div key={index} className="bg-white rounded-[10px] overflow-hidden">
+                    <div key={index} className="bg-white rounded-[8px] overflow-hidden">
                       <div className="relative w-full h-[258px] bg-background rounded-[8px] overflow-hidden">
                         <Image
                           src={images[index]}

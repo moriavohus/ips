@@ -111,7 +111,7 @@ export default function Header() {
 
   return (
     <header className="sticky top-0 z-40 bg-transparent">
-      <div className="w-full px-2 py-2 xl:container xl:mx-auto xl:pt-4 xl:pb-2 xl:px-4">
+      <div className="w-full px-2 pt-2 pb-2 xl:container xl:mx-auto xl:pt-4 xl:pb-2 xl:px-4">
         <div
           className="rounded-none xl:rounded-[14px] flex items-center justify-between h-[78px] p-2 xl:p-1 gap-2 transition-all"
           style={{ backgroundColor: "var(--MenuGlass)", backdropFilter: "blur(20px)" }}
@@ -224,7 +224,7 @@ export default function Header() {
             {/* Desktop: Contact button */}
             <Link
               href="/contact"
-              className="hidden xl:block h-full desktop-contact w-[211px] bg-black-primary hover:bg-black-secondary text-white rounded-[10px] font-sans text-nav-link font-normal transition-colors"
+              className="hidden xl:block h-full desktop-contact w-[211px] bg-black-primary hover:bg-surface-darker text-white rounded-[10px] font-sans text-nav-link font-normal transition-colors"
             >
               <span className="w-[211px] h-[70px] flex items-center justify-center">
                 {t("contact")}

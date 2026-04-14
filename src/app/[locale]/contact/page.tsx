@@ -11,9 +11,9 @@ export default function ContactPage() {
   const t = useTranslations("contact");
 
   return (
-    <main className="bg-white">
+    <main className="bg-black-primary">
       {/* 1. Hero with Quote Form */}
-      <CTASection />
+      <CTASection pageVariant="contact" />
 
       {/* 2. Direct Email Section */}
       <DirectEmail />

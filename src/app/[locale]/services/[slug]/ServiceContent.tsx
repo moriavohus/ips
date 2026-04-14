@@ -86,7 +86,6 @@ export default function ServiceContent({ serviceKey, slug }: { serviceKey: strin
                 customEyebrow="RESULTS"
                 customTitle={deliverablesData.title}
                 customItems={deliverablesMetrics}
-                columnsClassName="grid-cols-1 sm:grid-cols-2 lg:grid-cols-5"
             />
 
             <CertificationsBar />

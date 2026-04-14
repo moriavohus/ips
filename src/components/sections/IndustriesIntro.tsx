@@ -7,7 +7,7 @@ export default function IndustriesIntro() {
   return (
     <section id="industries-intro" className="overflow-hidden bg-white">
       <div className="w-full px-5 lg:px-10">
-        <div className="flex w-full flex-col items-center gap-16 md:flex-row md:items-start md:justify-center md:gap-20">
+        <div className="flex w-full flex-col items-center gap-16 py-5 md:flex-row md:items-start md:justify-center md:gap-20 lg:py-20">
           <h2 className="w-full flex-shrink-0 text-h2-mobile text-type-primary md:w-[50%] md:text-h2">
             {t("title")}
           </h2>

@@ -26,7 +26,7 @@ export default function GlobalNetwork() {
     ];
 
     return (
-        <section className="bg-white pt-[100px] pb-0 lg:pb-[100px]">
+        <section className="bg-white pt-0 pb-0 lg:pb-[100px]">
             <div className="container mx-auto lg:px-10">
                 <div className="mb-8">
                     <h2 className="font-sans text-h2 text-type-primary mb-4">

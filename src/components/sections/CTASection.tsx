@@ -5,17 +5,20 @@ import CTAForm from "@/components/ui/CTAForm";
 
 interface CTASectionProps {
   variant?: "default" | "industry";
+  pageVariant?: "default" | "contact";
 }
 
-export default function CTASection({ variant = "default" }: CTASectionProps) {
+export default function CTASection({ variant = "default", pageVariant = "default" }: CTASectionProps) {
   const t = useTranslations("cta");
   // const tf = useTranslations("footer");
 
+  const topPaddingClass = "pt-xxxl";
+
   return (
-    <section id="contact" className="bg-black-primary overflow-hidden pb-[32.5px] lg:pb-10">
-      <div className="container mx-auto flex w-full max-w-[1920px] flex-col items-center gap-40 px-5 pb-5 pt-0 md:gap-20 md:pb-10 md:pt-0 lg:gap-0 lg:px-10">
+    <section id="contact" className="bg-black-primary overflow-hidden">
+      <div className={`container mx-auto flex w-full max-w-[1920px] flex-col items-center gap-40 px-5 pb-xxxl md:gap-20 lg:gap-0 lg:px-10 ${topPaddingClass}`}>
         {variant === "industry" && (
-          <div className="w-full py-12 md:py-16">
+          <div className="w-full pb-12 md:pb-16">
             <p className="w-full font-sans text-[40px] md:text-[48px] font-normal leading-[1] tracking-[-1px] text-white">
               {t("industryHeadline")}
             </p>

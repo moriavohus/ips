@@ -45,7 +45,7 @@ export default function ProductsServicesSection() {
 
                     <div className="bg-background rounded-[16px] p-[4px] flex flex-col md:flex-row gap-[4px]">
                         {/* Products card */}
-                        <div className="w-full md:w-1/2 bg-white rounded-[12px] px-8 lg:px-10 xl:px-12 py-[24px] flex flex-col">
+                        <div className="flex w-full flex-col rounded-[12px] bg-white p-l md:w-1/2">
                             <h3 className="font-sans text-[48px] font-normal leading-[48px] tracking-[-1px] text-type-primary mb-4">
                                 {t("productsServices.productsTitle")}
                             </h3>
@@ -67,7 +67,7 @@ export default function ProductsServicesSection() {
                         </div>
 
                         {/* Services card */}
-                        <div className="w-full md:w-1/2 bg-white rounded-[12px] px-8 lg:px-10 xl:px-12 py-[24px] flex flex-col">
+                        <div className="flex w-full flex-col rounded-[12px] bg-white p-l md:w-1/2">
                             <h3 className="font-sans text-[48px] font-normal leading-[48px] tracking-[-1px] text-type-primary mb-4">
                                 {t("productsServices.servicesTitle")}
                             </h3>

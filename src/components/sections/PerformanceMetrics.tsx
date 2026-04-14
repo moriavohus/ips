@@ -1,3 +1,4 @@
+import type { CSSProperties } from "react";
 import { useTranslations } from "next-intl";
 import { LightningIcon, UserStarIcon, PinIcon, ThermoIcon } from "@/components/ui/Icons";
 import Image from "next/image";
@@ -38,10 +39,16 @@ export default function PerformanceMetrics({
     Icon,
   }));
 
-  const gridClasses = columnsClassName ?? "grid-cols-1 sm:grid-cols-2 lg:grid-cols-4";
+  const gridClasses = columnsClassName
+    ?? (customItems
+      ? "grid-cols-1 sm:grid-cols-2 lg:[grid-template-columns:repeat(var(--metrics-cols),minmax(0,1fr))]"
+      : "grid-cols-1 sm:grid-cols-2 lg:grid-cols-4");
 
   const GridContent = (
-    <div className={`grid ${gridClasses} gap-[4px]`}>
+    <div
+      className={`grid ${gridClasses} gap-[4px]`}
+      style={customItems && !columnsClassName ? ({ ["--metrics-cols" as string]: resolvedItems.length } as CSSProperties) : undefined}
+    >
       {resolvedItems.map((item, index) => {
         const [valueText, labelText] = customItems
           ? ["", item.title]
@@ -82,8 +89,8 @@ export default function PerformanceMetrics({
   // Если вызвано на странице About — отдаем без серой обертки и без заголовка
   if (hideHeader) {
     return (
-      <section className="bg-white py-[20px]">
-        <div className="w-full px-5 lg:px-10">
+      <section className="section-padding bg-white">
+        <div className="w-full px-5">
           <div className="relative w-full">
             {GridContent}
           </div>
@@ -95,7 +102,7 @@ export default function PerformanceMetrics({
   // Дефолтное поведение (Главная страница) — с серой оберткой и заголовком
   return (
     <section id="metrics" className="section-padding overflow-hidden bg-white">
-      <div className="w-full px-5 lg:px-10">
+      <div className="w-full px-5">
         <div className="bg-white border-[10px] lg:border-[20px] border-background rounded-[24px] lg:rounded-[44px] p-[20px] flex flex-col">
           <div className="flex flex-col mb-16 md:mb-[80px]">
             {(customEyebrow ?? t("eyebrow")) && (

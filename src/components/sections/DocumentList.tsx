@@ -1,7 +1,6 @@
 "use client";
 
 import { useTranslations } from "next-intl";
-import SectionWrapper from "@/components/ui/SectionWrapper";
 import DocumentDownloadList from "@/components/ui/DocumentDownloadList";
 
 interface DocItem {
@@ -69,8 +68,8 @@ export default function DocumentList() {
     const sections = ["datasheets", "brochures", "guidelines", "presentation"];
 
     return (
-        <SectionWrapper bg="white">
-            <div className="pt-[60px] pb-0">
+        <section className="overflow-hidden bg-white">
+            <div className="w-full pt-[60px] pb-0">
                 {sections.map((key, idx) => {
                     const section = t.raw(key);
                     return (
@@ -95,6 +94,6 @@ export default function DocumentList() {
                     </div>
                 </div>
             </div>
-        </SectionWrapper>
+        </section>
     );
 }
