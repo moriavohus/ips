@@ -18,11 +18,13 @@ export default function TrustedBySection() {
   const marqueeLogos = [...logos, ...logos];
 
   return (
-    <section className="w-full overflow-x-hidden bg-white py-l">
-      <div className="flex w-full flex-col items-center gap-m">
-        <h2 className="text-caps-style text-type-primary text-center">
-          Trusted by
-        </h2>
+    <section className="w-full overflow-x-hidden bg-white">
+      <div className="mx-auto flex w-full max-w-[1920px] flex-col items-start gap-m py-l">
+        <div className="flex w-full items-center gap-[10px] self-stretch px-[60px]">
+          <h2 className="text-caps-style text-type-primary">
+            Trusted by
+          </h2>
+        </div>
 
         <div className="w-full self-stretch overflow-hidden">
           <div className="trusted-by-marquee-track flex w-max items-center self-stretch">
@@ -33,7 +35,7 @@ export default function TrustedBySection() {
                 <div
                   key={`${logo.src}-${index}`}
                   aria-hidden={isClone}
-                  className="mr-m flex h-[72px] w-[220px] shrink-0 items-center justify-center md:h-[84px] md:w-[260px] lg:h-[96px] lg:w-[300px]"
+                  className="mr-m flex h-[50px] w-[154px] shrink-0 items-center justify-center md:h-[84px] md:w-[260px] lg:h-[96px] lg:w-[300px]"
                 >
                   <div className="relative h-full w-full">
                     <Image
