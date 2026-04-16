@@ -47,9 +47,9 @@ export default function Header() {
       hasDropdown: true,
       id: "about",
       items: [
-        { label: "MISSION & VISION", href: "/about" },
-        { label: "VALUES", href: "/about" },
-        { label: "GLOBAL NETWORK", href: "/about" },
+        { label: "MISSION & VISION", href: "/about#mission" },
+        { label: "VALUES", href: "/about#values" },
+        { label: "GLOBAL NETWORK", href: "/about#network" },
       ],
     },
     {

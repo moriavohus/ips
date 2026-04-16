@@ -1,3 +1,11 @@
+import type Lenis from "lenis";
+
+declare global {
+  interface Window {
+    __lenis?: Lenis;
+  }
+}
+
 export function cn(...classes: (string | undefined | null | false)[]) {
   return classes.filter(Boolean).join(" ");
 }
@@ -43,6 +51,13 @@ export function scrollToContactForm() {
   const headerOffset = 120;
   const targetTop =
     contactSection.getBoundingClientRect().top + window.scrollY - headerOffset;
+
+  if (window.__lenis) {
+    window.__lenis.scrollTo(Math.max(targetTop, 0), {
+      duration: 1.1,
+    });
+    return;
+  }
 
   window.scrollTo({
     top: Math.max(targetTop, 0),

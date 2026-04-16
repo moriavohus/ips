@@ -6,9 +6,11 @@ import localFont from "next/font/local";
 import { routing, Locale } from "@/i18n/routing";
 import Header from "@/components/layout/Header";
 import Footer from "@/components/layout/Footer";
+import SmoothScroll from "@/components/layout/SmoothScroll";
 import MobileFooterText from "@/components/sections/MobileFooterText";
 import Analytics from "@/components/layout/Analytics";
 import "@/styles/globals.css";
+import "lenis/dist/lenis.css";
 import "@fontsource/roboto-mono";
 
 const inter = localFont({
@@ -83,9 +85,10 @@ export default async function LocaleLayout({ children, params }: Props) {
 
   return (
     <html lang={locale} dir={dir} className={inter.variable}>
-      <body className="font-sans antialiased text-black bg-white">
+      <body className="min-h-screen bg-white font-sans antialiased text-black">
         <NextIntlClientProvider messages={messages}>
           <Analytics />
+          <SmoothScroll />
           <Header />
           <main>{children}</main>
           <MobileFooterText />

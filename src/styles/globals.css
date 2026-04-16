@@ -36,6 +36,11 @@
 @layer base {
   html {
     scroll-behavior: smooth;
+    overscroll-behavior-y: none;
+  }
+
+  html.lenis {
+    scroll-behavior: auto;
   }
 
   body {
@@ -43,6 +48,7 @@
     font-size: 19px;
     line-height: 1.4;
     font-feature-settings: "cv11" 1, "ss01" 1, "ss03" 1;
+    overscroll-behavior-y: none;
   }
 
   a, button {
@@ -55,6 +61,16 @@
   .container {
     padding-left: 20px !important;
     padding-right: 20px !important;
+  }
+}
+
+@keyframes trusted-by-marquee {
+  from {
+    transform: translateX(0);
+  }
+
+  to {
+    transform: translateX(-50%);
   }
 }
 
@@ -139,6 +155,17 @@
 
   .heading-section {
     @apply heading-h2-bold;
+  }
+
+  .trusted-by-marquee-track {
+    animation: trusted-by-marquee 28s linear infinite;
+    will-change: transform;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .trusted-by-marquee-track {
+    animation: none;
   }
 }
 
