@@ -11,6 +11,7 @@ const logos = [
   { src: "/images/kss-logo 1.png", alt: "KSS" },
   { src: "/images/ktc-logo 1.png", alt: "Caspian Pipeline Consortium" },
   { src: "/images/Frame 2131328953.png", alt: "NCOC" },
+  { src: "/images/IMAGE 2026-04-16 14_57_23 1.png", alt: "AXIS Therm" },
 ] as const;
 
 export default function TrustedBySection() {
