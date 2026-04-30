@@ -37,7 +37,7 @@ export default function ContactUsBlock({ variant = "dark" }: ContactUsBlockProps
                         {/* Email */}
                         <div className="bg-background rounded-[4px] flex flex-col items-start gap-5 self-stretch p-s md:flex-[1_0_0]">
                             <MessageIcon className={`w-5 h-5 ${iconColor}`} aria-label="Email" />
-                            <a href={`mailto:${t("email")}`} className={`min-w-0 break-all font-sans text-[22px] font-bold leading-[26px] ${cardLabelStyle} hover:text-type-brand transition-colors`}>
+                            <a href={`mailto:${t("email")}`} className={`font-sans text-[22px] font-bold leading-[26px] ${cardLabelStyle} hover:text-type-brand transition-colors`}>
                                 {t("email")}
                             </a>
                         </div>
