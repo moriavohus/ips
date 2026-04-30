@@ -3,7 +3,6 @@
 import { useTranslations } from "next-intl";
 import { Link } from "@/i18n/navigation";
 import Image from "next/image";
-import { ChevronRight } from "@/components/ui/Icons";
 
 const industries = [
   { key: "oilGas", image: "/images/image 68.png", link: "/industries/oil-gas" },
@@ -93,8 +92,13 @@ export default function IndustriesMap({ variant = "default" }: IndustriesMapProp
 
                     <div className="w-[109px] h-[56px] flex items-center justify-center gap-2 mt-auto rounded-[8px] bg-background group-hover:bg-border-subtle transition-colors">
                       <span className="font-sans text-[15px] font-medium leading-[1.1] uppercase text-black-primary">VIEW</span>
-                      <div className="text-black-primary w-3 h-3 flex items-center justify-center">
-                        <ChevronRight />
+                      <div className="relative h-6 w-6 -rotate-90">
+                        <Image
+                          src="/images/nav_Down.svg"
+                          alt=""
+                          fill
+                          className="object-contain brightness-0"
+                        />
                       </div>
                     </div>
                   </div>
