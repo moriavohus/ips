@@ -195,7 +195,7 @@ export default function Header() {
                           <Link
                             key={idx}
                             href={item.href}
-                            className="flex flex-col gap-3 px-5 py-5 rounded-[12px] border border-transparent hover:border-black-secondary transition-all duration-300"
+                            className="box-border flex w-[324.5px] items-center gap-[14px] rounded-[10px] bg-[#161616] p-[14px] transition-all duration-300 hover:border hover:border-[rgba(102,102,102,0.78)]"
                             onClick={() => setDropdownOpen(null)}
                           >
                             <span className="font-sans text-nav-link font-normal text-white uppercase transition-colors duration-300">

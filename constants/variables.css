@@ -7,16 +7,22 @@
 :root {
 
   /* ==============================================
-     GLOBAL COLORS
+     GLOBAL COLORS (Strictly per Figma)
      ============================================== */
 
-  --Background:        #F5F5F5;
+  --Background:        #F6F6F6;
+  --Orange-Lite:       #FF8037;
+  --Orange-Grad-1:     #FF5E1E;
+  --Orange-Grad-2:     #FF7E2F;
+  --Orange-Red:        #FF6123;
   --Brand:             #DD0004;
   --Brand-Dark:        #B30C0F;
-  --Black-Primary:     #1C1917;
-  --Black-Secondary:   #6F707D;
-  --Black-Third:       #B7B8BE;
-  --MenuGlass:         rgba(245, 245, 245, 0.60);
+  --Black-Primary:     #212121;
+  --Black-Secondary:   #626364;
+  --Black-Third:       #969799;
+  --Black-Thout:       #CDCDCD;
+  --Glass:             rgba(0, 0, 0, 0.04);
+  --MenuGlass:         rgba(246, 246, 246, 0.70);
   --White:             #FFFFFF;
 
   /* Blur для меню — применяй так:
@@ -39,34 +45,21 @@
   --radius-full: 80px;
 
   /* ==============================================
-     SPACING
-     ============================================== */
-
-  --space-xxs:   4px;
-  --space-xs:    8px;
-  --space-s:     14px;
-  --space-m:     20px;
-  --space-l:     28px;
-  --space-xl:    40px;
-  --space-xxl:   64px;
-  --space-xxxl:  80px;
-
-  /* ==============================================
      SEMANTIC — TEXT
      ============================================== */
 
-  --Text-Primary:       #1C1917;
-  --Text-Secondary:     #6F707D;
-  --Text-Third:         #B7B8BE;
-  --Text-Brand:         #B30C0F;
+  --Text-Primary:       var(--Black-Primary);
+  --Text-Secondary:     var(--Black-Secondary);
+  --Text-Third:         var(--Black-Third);
+  --Text-Brand:         #DD0004;
   --Text-Dark-Primary:  var(--White);
   --Text-Dark-Secondary:#DDDDDD;
 
   /* SEMANTIC — TYPE (aliases) */
-  --Type-Primary:       var(--Text-Primary);
-  --Type-Secondary:     var(--Text-Secondary);
-  --Type-Third:         var(--Text-Third);
-  --Type-Brand:         var(--Text-Brand);
+  --Type-Primary:       var(--Black-Primary);
+  --Type-Secondary:     var(--Black-Secondary);
+  --Type-Third:         var(--Black-Third);
+  --Type-Brand:         #DD0004;
   --Type-White:         var(--White);
 
 }

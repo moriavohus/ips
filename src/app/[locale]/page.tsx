@@ -1,5 +1,4 @@
 import Hero from "@/components/sections/Hero";
-import TrustedBySection from "@/components/sections/TrustedBySection";
 import ProductGrid from "@/components/sections/ProductGrid";
 import ServicesBlock from "@/components/sections/ServicesBlock";
 import IndustriesMap from "@/components/sections/IndustriesMap";
@@ -12,7 +11,6 @@ export default function HomePage() {
   return (
     <>
       <Hero />
-      <TrustedBySection />
       <ProductGrid />
       <ServicesBlock />
       <IndustriesMap />
