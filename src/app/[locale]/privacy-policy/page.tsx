@@ -22,7 +22,7 @@ export default function PrivacyPolicy() {
           <p>We use essential cookies for language preferences and analytics cookies to understand how visitors use our site.</p>
           
           <h2 className="text-2xl font-semibold text-black mt-8">5. Contact</h2>
-          <p>For privacy-related inquiries, contact us at info@ips-me.com</p>
+          <p>For privacy-related inquiries, contact us at sanat@ipsinsulation.co.uk</p>
         </div>
       </div>
     </main>

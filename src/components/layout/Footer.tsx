@@ -62,9 +62,9 @@ export default function Footer() {
   ];
 
   return (
-    <footer className="flex w-full flex-col items-start bg-black-primary pt-6 text-white md:pt-12 lg:pt-20">
+    <footer className="flex w-full flex-col items-start bg-black-primary pt-[40px] text-white">
       <div className="container mx-auto flex w-full max-w-[1920px] flex-col items-start bg-black-primary px-5 lg:px-10">
-        <div className="mb-20 flex w-full flex-col gap-12 lg:mb-[120px] lg:gap-20">
+        <div className="mb-[40px] flex w-full flex-col gap-12 lg:gap-20">
         <div>
           <Link href="/">
             <div className="w-[133px] h-[62px] bg-white rounded-[10px] flex items-center justify-center">
