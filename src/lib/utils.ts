@@ -17,9 +17,9 @@ export function validateEmail(email: string): boolean {
 export type ContactFormData = {
   name: string;
   email: string;
-  company?: string;
-  phone?: string;
-  message: string;
+  company: string;
+  phone: string;
+  message?: string;
   product?: string;
   quantity?: string;
 };
@@ -27,10 +27,11 @@ export type ContactFormData = {
 export function validateContactForm(data: ContactFormData) {
   const errors: Partial<Record<keyof ContactFormData, string>> = {};
 
-  if (!data.name.trim()) errors.name = "nameRequired";
-  if (!data.email.trim()) errors.email = "emailRequired";
+  if (!data.name?.trim()) errors.name = "nameRequired";
+  if (!data.company?.trim()) errors.company = "companyRequired";
+  if (!data.email?.trim()) errors.email = "emailRequired";
   else if (!validateEmail(data.email)) errors.email = "emailInvalid";
-  if (!data.message.trim()) errors.message = "messageRequired";
+  if (!data.phone?.trim()) errors.phone = "phoneRequired";
 
   return {
     isValid: Object.keys(errors).length === 0,

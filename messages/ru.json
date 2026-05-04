@@ -923,8 +923,10 @@
     },
     "validation": {
       "nameRequired": "Имя обязательно",
+      "companyRequired": "Компания обязательна",
       "emailRequired": "Email обязателен",
       "emailInvalid": "Введите корректный email",
+      "phoneRequired": "Телефон обязателен",
       "messageRequired": "Сообщение обязательно"
     }
   },

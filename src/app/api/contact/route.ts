@@ -2,7 +2,8 @@ import { NextRequest, NextResponse } from "next/server";
 import { validateContactForm, ContactFormData } from "@/lib/utils";
 import { Resend } from "resend";
 
-const resend = new Resend(process.env.RESEND_API_KEY);
+const resendApiKey = process.env.RESEND_API_KEY;
+const resend = resendApiKey ? new Resend(resendApiKey) : null;
 
 export async function POST(request: NextRequest) {
   try {
@@ -16,11 +17,19 @@ export async function POST(request: NextRequest) {
       );
     }
 
+    if (!resend) {
+      console.error("RESEND_API_KEY is not configured.");
+      return NextResponse.json(
+        { error: "Unable to send message. Please try again later." },
+        { status: 503 }
+      );
+    }
+
     await resend.emails.send({
       from: "IPS Middle East <onboarding@resend.dev>",
       to: "sanat@ipsinsulation.co.uk",
       subject: "New contact form submission — IPS Middle East",
-      text: `Name: ${body.name}\nCompany: ${body.company}\nEmail: ${body.email}\nPhone: ${body.phone}\n\nMessage:\n${body.message}`,
+      text: `Name: ${body.name}\nCompany: ${body.company}\nEmail: ${body.email}\nPhone: ${body.phone}\n\nMessage:\n${body.message || ""}`,
     });
 
     return NextResponse.json({ success: true });

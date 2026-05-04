@@ -111,22 +111,32 @@ export default function QuoteForm({ showProductField = true }: Props) {
       </div>
 
       <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
-        <input
-          type="text"
-          name="company"
-          placeholder={tc("form.company")}
-          value={formData.company}
-          onChange={handleChange}
-          className="w-full px-4 py-3 border border-gray-200 rounded-md focus:outline-none focus:ring-2 focus:ring-primary focus:border-transparent"
-        />
-        <input
-          type="tel"
-          name="phone"
-          placeholder={tc("form.phone")}
-          value={formData.phone}
-          onChange={handleChange}
-          className="w-full px-4 py-3 border border-gray-200 rounded-md focus:outline-none focus:ring-2 focus:ring-primary focus:border-transparent"
-        />
+        <div>
+          <input
+            type="text"
+            name="company"
+            placeholder={tc("form.company")}
+            value={formData.company}
+            onChange={handleChange}
+            className="w-full px-4 py-3 border border-gray-200 rounded-md focus:outline-none focus:ring-2 focus:ring-primary focus:border-transparent"
+          />
+          {errors.company && (
+            <p className="text-red-500 text-sm mt-1">{tc(`validation.${errors.company}`)}</p>
+          )}
+        </div>
+        <div>
+          <input
+            type="tel"
+            name="phone"
+            placeholder={tc("form.phone")}
+            value={formData.phone}
+            onChange={handleChange}
+            className="w-full px-4 py-3 border border-gray-200 rounded-md focus:outline-none focus:ring-2 focus:ring-primary focus:border-transparent"
+          />
+          {errors.phone && (
+            <p className="text-red-500 text-sm mt-1">{tc(`validation.${errors.phone}`)}</p>
+          )}
+        </div>
       </div>
 
       {showProductField && (
