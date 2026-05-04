@@ -1,69 +1,79 @@
 "use client";
 
+import { useState } from "react";
 import { useTranslations } from "next-intl";
 import { CTAInput, CTATextarea } from "@/components/ui/CTAInput";
 
 export default function CTAForm() {
   const t = useTranslations("cta");
+  const [status, setStatus] = useState<"idle" | "loading" | "success" | "error">("idle");
+
+  async function handleSubmit(e: React.FormEvent<HTMLFormElement>) {
+    e.preventDefault();
+    setStatus("loading");
+
+    const form = e.currentTarget;
+    const data = {
+      name: (form.elements.namedItem("name") as HTMLInputElement).value,
+      company: (form.elements.namedItem("company") as HTMLInputElement).value,
+      email: (form.elements.namedItem("email") as HTMLInputElement).value,
+      phone: (form.elements.namedItem("phone") as HTMLInputElement).value,
+      message: (form.elements.namedItem("message") as HTMLTextAreaElement).value,
+    };
+
+    try {
+      const res = await fetch("/contact.php", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify(data),
+      });
+
+      if (res.ok) {
+        setStatus("success");
+        form.reset();
+      } else {
+        setStatus("error");
+      }
+    } catch {
+      setStatus("error");
+    }
+  }
 
   return (
     <div className="flex w-full flex-[1_0_0] self-stretch flex-col items-start justify-center gap-20 rounded-[24px] border-0 bg-[#252525] p-5 [box-shadow:0_0_0_12px_#636363,0_25px_50px_-12px_rgb(0_0_0_/_0.25)] lg:rounded-[44px] lg:border-[20px] lg:border-[#636363] lg:p-5 lg:[box-shadow:0_25px_50px_-12px_rgb(0_0_0_/_0.25)]">
-      <form className="flex w-full flex-col gap-5" onSubmit={(e) => e.preventDefault()}>
+      <form className="flex w-full flex-col gap-5" onSubmit={handleSubmit}>
         <div className="grid grid-cols-1 md:grid-cols-2 gap-5">
           <div className="flex flex-col gap-2">
             <label className="flex justify-between font-sans text-[22px] font-bold leading-[26px] text-white">
-              {t("fields.name")}
-              <span className="text-type-brand">*</span>
+              {t("fields.name")}<span className="text-type-brand">*</span>
             </label>
-            <CTAInput
-              type="text"
-              className="min-h-[52px]"
-              required
-            />
+            <CTAInput name="name" type="text" className="min-h-[52px]" required />
           </div>
           <div className="flex flex-col gap-2">
             <label className="flex justify-between font-sans text-[22px] font-bold leading-[26px] text-white">
-              {t("fields.company")}
-              <span className="text-type-brand">*</span>
+              {t("fields.company")}<span className="text-type-brand">*</span>
             </label>
-            <CTAInput
-              type="text"
-              className="min-h-[52px]"
-              required
-            />
+            <CTAInput name="company" type="text" className="min-h-[52px]" required />
           </div>
           <div className="flex flex-col gap-2">
             <label className="flex justify-between font-sans text-[22px] font-bold leading-[26px] text-white">
-              {t("fields.email")}
-              <span className="text-type-brand">*</span>
+              {t("fields.email")}<span className="text-type-brand">*</span>
             </label>
-            <CTAInput
-              type="text"
-              className="min-h-[52px]"
-              required
-            />
+            <CTAInput name="email" type="email" className="min-h-[52px]" required />
           </div>
           <div className="flex flex-col gap-2">
             <label className="flex justify-between font-sans text-[22px] font-bold leading-[26px] text-white">
-              {t("fields.phone")}
-              <span className="text-type-brand">*</span>
+              {t("fields.phone")}<span className="text-type-brand">*</span>
             </label>
-            <CTAInput
-              type="tel"
-              className="min-h-[52px]"
-              required
-            />
+            <CTAInput name="phone" type="tel" className="min-h-[52px]" required />
           </div>
         </div>
 
         <div className="flex flex-col gap-2">
           <label className="flex justify-between font-sans text-[22px] font-bold leading-[26px] text-white">
-            {t("fields.message")}
-            <span className="text-type-brand">*</span>
+            {t("fields.message")}<span className="text-type-brand">*</span>
           </label>
-          <CTATextarea
-            placeholder={t("fields.messagePlaceholder")}
-          />
+          <CTATextarea name="message" placeholder={t("fields.messagePlaceholder")} />
         </div>
 
         <div className="flex items-center gap-3">
@@ -78,11 +88,19 @@ export default function CTAForm() {
           </label>
         </div>
 
+        {status === "success" && (
+          <p className="text-green-400 font-sans text-[16px]">Your message has been sent successfully.</p>
+        )}
+        {status === "error" && (
+          <p className="text-red-400 font-sans text-[16px]">Something went wrong. Please try again.</p>
+        )}
+
         <button
           type="submit"
-          className="w-fit rounded-[14px] bg-white px-[30px] py-[16px] font-sans text-body-sm font-medium uppercase leading-[1.1] tracking-[0.02em] text-type-primary transition-colors hover:bg-background md:px-[40px] md:py-[20px] md:text-caps"
+          disabled={status === "loading"}
+          className="w-fit rounded-[14px] bg-white px-[30px] py-[16px] font-sans text-body-sm font-medium uppercase leading-[1.1] tracking-[0.02em] text-type-primary transition-colors hover:bg-background md:px-[40px] md:py-[20px] md:text-caps disabled:opacity-50"
         >
-          {t("button")}
+          {status === "loading" ? "Sending..." : t("button")}
         </button>
       </form>
     </div>
