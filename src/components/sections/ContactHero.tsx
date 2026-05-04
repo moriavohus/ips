@@ -74,9 +74,8 @@ export default function ContactHero() {
                                 </div>
                             </div>
                             <div className="flex flex-col gap-2">
-                                <label className="font-sans text-[22px] font-bold leading-[26px] text-white flex justify-between">
+                                <label className="font-sans text-[22px] font-bold leading-[26px] text-white">
                                     {tc("fields.message")}
-                                    <span className="text-type-brand">*</span>
                                 </label>
                                 <textarea
                                     placeholder="Tell us about your project..."
