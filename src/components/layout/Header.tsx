@@ -222,7 +222,7 @@ export default function Header() {
 
           {/* Right Action Area */}
           <div className="flex items-center justify-end h-full gap-2">
-            <LanguageSwitcher className="hidden xl:flex h-[54px]" />
+            <LanguageSwitcher variant="dropdown" className="hidden xl:flex" />
 
             {/* Desktop: Contact button */}
             <Link
@@ -267,7 +267,6 @@ export default function Header() {
               </div>
             </Link>
             <div className="flex items-center gap-3">
-              <LanguageSwitcher onChange={closeMobileMenu} />
               <button
                 onClick={closeMobileMenu}
                 aria-label="Close menu"
@@ -282,6 +281,12 @@ export default function Header() {
 
           {/* Mobile menu items */}
           <nav className="flex flex-col items-center pt-10 px-5">
+            <LanguageSwitcher
+              variant="mobile"
+              onChange={closeMobileMenu}
+              className="mb-10 max-w-[430px]"
+            />
+
             <div className="flex flex-col items-center w-full gap-[40px]">
               {links.map((link) => (
                 <div key={link.href} className="flex flex-col items-center w-full">
