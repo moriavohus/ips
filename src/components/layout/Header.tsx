@@ -6,6 +6,7 @@ import { Link, usePathname } from "@/i18n/navigation";
 import Image from "next/image";
 import { MenuIcon } from "@/components/ui/Icons";
 import { scrollToContactForm } from "@/lib/utils";
+import LanguageSwitcher from "@/components/layout/LanguageSwitcher";
 
 export default function Header() {
   const t = useTranslations("nav");
@@ -221,6 +222,8 @@ export default function Header() {
 
           {/* Right Action Area */}
           <div className="flex items-center justify-end h-full gap-2">
+            <LanguageSwitcher className="hidden xl:flex h-[54px]" />
+
             {/* Desktop: Contact button */}
             <Link
               href="/contact"
@@ -263,15 +266,18 @@ export default function Header() {
                 />
               </div>
             </Link>
-            <button
-              onClick={closeMobileMenu}
-              aria-label="Close menu"
-              className="w-10 h-10 flex items-center justify-center text-type-secondary"
-            >
-              <svg width="20" height="20" viewBox="0 0 20 20" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
-                <path d="M15 5L5 15M5 5l10 10" />
-              </svg>
-            </button>
+            <div className="flex items-center gap-3">
+              <LanguageSwitcher onChange={closeMobileMenu} />
+              <button
+                onClick={closeMobileMenu}
+                aria-label="Close menu"
+                className="w-10 h-10 flex items-center justify-center text-type-secondary"
+              >
+                <svg width="20" height="20" viewBox="0 0 20 20" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
+                  <path d="M15 5L5 15M5 5l10 10" />
+                </svg>
+              </button>
+            </div>
           </div>
 
           {/* Mobile menu items */}

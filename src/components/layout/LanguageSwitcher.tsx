@@ -6,30 +6,42 @@ import { routing, Locale } from "@/i18n/routing";
 
 const labels: Record<Locale, string> = {
   en: "EN",
-  ar: "AR",
   ru: "RU",
+  ar: "AR",
 };
 
-export default function LanguageSwitcher() {
+type LanguageSwitcherProps = {
+  onChange?: () => void;
+  className?: string;
+};
+
+export default function LanguageSwitcher({ onChange, className = "" }: LanguageSwitcherProps) {
   const locale = useLocale() as Locale;
   const router = useRouter();
   const pathname = usePathname();
 
   const switchLocale = (newLocale: Locale) => {
+    if (newLocale === locale) return;
     router.replace(pathname, { locale: newLocale });
+    onChange?.();
   };
 
   return (
-    <div className="flex items-center gap-1">
+    <div
+      className={`flex items-center gap-1 rounded-[10px] bg-white/70 p-1 ${className}`}
+      aria-label="Language switcher"
+    >
       {routing.locales.map((loc) => (
         <button
           key={loc}
+          type="button"
           onClick={() => switchLocale(loc)}
-          className={`px-2 py-1 text-sm font-medium rounded transition-colors ${
+          className={`h-9 min-w-10 rounded-[8px] px-3 font-sans text-[13px] font-medium uppercase transition-colors ${
             locale === loc
-              ? "bg-primary text-white"
-              : "text-gray-dark hover:text-primary"
+              ? "bg-black-primary text-white"
+              : "text-type-secondary hover:bg-white hover:text-primary"
           }`}
+          aria-pressed={locale === loc}
         >
           {labels[loc]}
         </button>
