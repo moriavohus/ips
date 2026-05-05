@@ -281,12 +281,6 @@ export default function Header() {
 
           {/* Mobile menu items */}
           <nav className="flex flex-col items-center pt-10 px-5">
-            <LanguageSwitcher
-              variant="mobile"
-              onChange={closeMobileMenu}
-              className="mb-10 max-w-[430px]"
-            />
-
             <div className="flex flex-col items-center w-full gap-[40px]">
               {links.map((link) => (
                 <div key={link.href} className="flex flex-col items-center w-full">
@@ -368,6 +362,11 @@ export default function Header() {
                   <line x1="12" y1="15" x2="12" y2="3" />
                 </svg>
               </a>
+              <LanguageSwitcher
+                variant="mobile"
+                onChange={closeMobileMenu}
+                className="mt-2 max-w-[430px]"
+              />
             </div>
           </nav>
         </div>
