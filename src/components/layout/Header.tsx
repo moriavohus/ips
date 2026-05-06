@@ -222,7 +222,7 @@ export default function Header() {
 
           {/* Right Action Area */}
           <div className="flex items-center justify-end h-full gap-2">
-            <LanguageSwitcher variant="dropdown" className="hidden xl:flex" />
+            <LanguageSwitcher variant="dropdown" className="hidden xl:flex desktop-language-switcher" />
 
             {/* Desktop: Contact button */}
             <Link

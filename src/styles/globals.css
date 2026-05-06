@@ -179,6 +179,10 @@
   header .desktop-contact {
     display: none !important;
   }
+  /* Скрываем десктопный переключатель языка */
+  header .desktop-language-switcher {
+    display: none !important;
+  }
   /* Показываем мобильную кнопку бургера */
   header .mobile-burger {
     display: flex !important;
