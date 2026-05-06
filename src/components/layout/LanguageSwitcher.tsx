@@ -41,10 +41,10 @@ export default function LanguageSwitcher({
         className={`group relative z-50 inline-flex h-full w-[79px] flex-col items-start ${className}`}
         aria-label="Language switcher"
       >
-        <div className="absolute left-0 top-0 inline-flex h-full max-h-full w-full flex-col items-start gap-1 overflow-hidden rounded-[10px] transition-[background-color,backdrop-filter,max-height] duration-200 group-hover:h-auto group-hover:max-h-[218px] group-hover:bg-menu-glass group-hover:backdrop-blur-[20px] group-focus-within:h-auto group-focus-within:max-h-[218px] group-focus-within:bg-menu-glass group-focus-within:backdrop-blur-[20px]">
+        <div className="absolute left-0 top-0 inline-flex max-h-[70px] w-full flex-col items-start gap-1 overflow-hidden rounded-[10px] transition-[background-color,backdrop-filter,max-height] duration-200 group-hover:max-h-[218px] group-hover:bg-menu-glass group-hover:backdrop-blur-[20px] group-focus-within:max-h-[218px] group-focus-within:bg-menu-glass group-focus-within:backdrop-blur-[20px]">
           <button
             type="button"
-            className={`${cellClasses} flex h-full bg-white text-type-primary group-hover:h-[70px] group-focus-within:h-[70px]`}
+            className={`${cellClasses} flex h-[70px] bg-white text-type-primary`}
             aria-haspopup="true"
             aria-expanded="false"
             aria-current="true"

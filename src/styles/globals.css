@@ -189,7 +189,11 @@
   }
   /* Показываем мобильную кнопку GET A QUOTE */
   header .mobile-cta {
-    display: block !important;
+    display: flex !important;
+  }
+  /* Держим мобильный gap между логотипом и кнопкой */
+  header .header-mobile-actions {
+    gap: 8px !important;
   }
   /* Показываем мобильное оверлей-меню */
   header .mobile-overlay {

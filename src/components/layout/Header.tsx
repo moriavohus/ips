@@ -118,7 +118,7 @@ export default function Header() {
           style={{ backgroundColor: "var(--MenuGlass)", backdropFilter: "blur(20px)" }}
         >
           {/* Logo + Mobile CTA */}
-          <div className="flex items-center h-full gap-2 xl:gap-0">
+          <div className="header-mobile-actions flex items-center h-full gap-2 xl:gap-0">
             <Link href="/" className="flex items-center h-full shrink-0">
               <div className="w-[133px] h-full bg-white rounded-[10px] flex items-center justify-center">
                 <div className="relative w-[80px] xl:w-[90px] h-[36px] xl:h-[40px]">
