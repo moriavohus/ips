@@ -33,16 +33,18 @@ export default function LanguageSwitcher({
 
   if (variant === "dropdown") {
     const otherLocales = routing.locales.filter((loc) => loc !== locale);
+    const cellClasses =
+      "box-border flex h-[78px] w-[71px] flex-col items-center justify-center gap-2 rounded-[10px] px-5 py-2 font-sans text-nav-link font-normal uppercase transition-colors";
 
     return (
       <div
-        className={`group relative flex h-full w-[72px] flex-col items-center justify-center gap-1 ${className}`}
+        className={`group relative z-50 inline-flex h-[78px] w-[79px] flex-col items-start ${className}`}
         aria-label="Language switcher"
       >
-        <div className="flex w-[72px] flex-col items-center gap-1 overflow-hidden rounded-[14px] p-1 transition-all duration-200 group-hover:bg-menu-glass group-hover:backdrop-blur-[20px] group-hover:overflow-visible group-focus-within:bg-menu-glass group-focus-within:backdrop-blur-[20px] group-focus-within:overflow-visible">
+        <div className="absolute left-0 top-[-4px] inline-flex max-h-[86px] flex-col items-start gap-1 overflow-hidden rounded-[14px] p-1 transition-[background-color,backdrop-filter,max-height] duration-200 group-hover:max-h-[260px] group-hover:bg-menu-glass group-hover:backdrop-blur-[20px] group-focus-within:max-h-[260px] group-focus-within:bg-menu-glass group-focus-within:backdrop-blur-[20px]">
           <button
             type="button"
-            className="flex h-[70px] w-[64px] flex-col items-center justify-center gap-2 rounded-[10px] px-5 py-2 font-sans text-nav-link font-normal uppercase text-type-primary transition-colors group-hover:bg-white group-hover:text-primary group-focus-within:bg-white group-focus-within:text-primary"
+            className={`${cellClasses} bg-white text-type-primary`}
             aria-haspopup="true"
             aria-expanded="false"
             aria-current="true"
@@ -55,7 +57,7 @@ export default function LanguageSwitcher({
               key={loc}
               type="button"
               onClick={() => switchLocale(loc)}
-              className="flex h-[70px] w-[64px] flex-col items-center justify-center gap-2 rounded-[10px] px-5 py-2 font-sans text-nav-link font-normal uppercase text-type-secondary opacity-0 transition-all duration-200 hover:bg-white hover:text-primary group-hover:opacity-100 group-focus-within:opacity-100"
+              className={`${cellClasses} text-type-primary hover:bg-white hover:text-type-brand`}
             >
               {labels[loc]}
             </button>
