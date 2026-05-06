@@ -57,7 +57,7 @@ export default function LanguageSwitcher({
               key={loc}
               type="button"
               onClick={() => switchLocale(loc)}
-              className={`${cellClasses} text-type-primary hover:bg-white hover:text-type-brand`}
+              className={`${cellClasses} text-type-primary opacity-0 transition-[background-color,color,opacity] hover:bg-white hover:text-type-brand group-hover:opacity-100 group-focus-within:opacity-100`}
             >
               {labels[loc]}
             </button>
