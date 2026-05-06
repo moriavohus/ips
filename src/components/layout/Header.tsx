@@ -112,16 +112,16 @@ export default function Header() {
 
   return (
     <header className="sticky top-0 z-40 bg-transparent">
-      <div className="w-full px-0 pt-0 pb-0 xl:container xl:mx-auto xl:pt-4 xl:pb-2 xl:px-4">
+      <div className="w-full px-0 pt-0 pb-0 2xl:container 2xl:mx-auto 2xl:pt-4 2xl:pb-2 2xl:px-4">
         <div
-          className="rounded-none xl:rounded-[14px] flex items-center justify-between h-[78px] p-[8px] xl:p-1 gap-2 transition-all"
+          className="rounded-none 2xl:rounded-[14px] flex items-center justify-between h-[78px] p-[8px] 2xl:p-1 gap-2 transition-all"
           style={{ backgroundColor: "var(--MenuGlass)", backdropFilter: "blur(20px)" }}
         >
           {/* Logo + Mobile CTA */}
-          <div className="header-mobile-actions flex items-center h-full gap-2 xl:gap-0">
+          <div className="flex items-center h-full gap-2 2xl:gap-0">
             <Link href="/" className="flex items-center h-full shrink-0">
               <div className="w-[133px] h-full bg-white rounded-[10px] flex items-center justify-center">
-                <div className="relative w-[80px] xl:w-[90px] h-[36px] xl:h-[40px]">
+                <div className="relative w-[80px] 2xl:w-[90px] h-[36px] 2xl:h-[40px]">
                   <Image
                     src="/images/Navbar/5/Frame-2085664158.svg"
                     alt="IPS Middle East Logo"
@@ -136,14 +136,14 @@ export default function Header() {
             <button
               type="button"
               onClick={scrollToContactForm}
-              className="xl:hidden h-full mobile-cta bg-black-primary text-white rounded-[10px] font-sans text-[16px] font-medium uppercase tracking-[0.02em] transition-colors flex items-center justify-center whitespace-nowrap px-5"
+              className="2xl:hidden h-full mobile-cta bg-black-primary text-white rounded-[10px] font-sans text-[16px] font-medium uppercase tracking-[0.02em] transition-colors flex items-center justify-center whitespace-nowrap px-5"
             >
                 GET A QUOTE
             </button>
           </div>
 
           {/* Desktop Navigation */}
-          <nav className="hidden xl:flex items-center justify-center gap-4 xl:gap-6 h-full desktop-nav">
+          <nav className="hidden 2xl:flex items-center justify-center gap-4 2xl:gap-6 h-full desktop-nav">
             {links.map((link) => {
               const isOpen = link.hasDropdown && dropdownOpen === link.id;
               const isActive = pathname.startsWith(link.href);
@@ -222,12 +222,12 @@ export default function Header() {
 
           {/* Right Action Area */}
           <div className="flex items-center justify-end h-full gap-2">
-            <LanguageSwitcher variant="dropdown" className="hidden xl:flex desktop-language-switcher" />
+            <LanguageSwitcher variant="dropdown" className="hidden 2xl:flex" />
 
             {/* Desktop: Contact button */}
             <Link
               href="/contact"
-              className="hidden xl:block h-full desktop-contact w-[211px] bg-black-primary hover:bg-surface-darker text-white rounded-[10px] font-sans text-nav-link font-normal transition-colors"
+              className="hidden 2xl:block h-full desktop-contact w-[211px] bg-black-primary hover:bg-surface-darker text-white rounded-[10px] font-sans text-nav-link font-normal transition-colors"
             >
               <span className="w-[211px] h-[70px] flex items-center justify-center">
                 {t("contact")}
@@ -236,7 +236,7 @@ export default function Header() {
 
             {/* Mobile Menu Toggle */}
             <button
-              className="xl:hidden px-2 text-type-primary h-full flex items-center justify-center mobile-burger"
+              className="2xl:hidden px-2 text-type-primary h-full flex items-center justify-center mobile-burger"
               onClick={() => setMobileOpen(true)}
               aria-label="Menu"
             >
@@ -249,7 +249,7 @@ export default function Header() {
       {/* Mobile Navigation */}
       {mobileOpen && (
         <div
-          className={`xl:hidden mobile-overlay fixed inset-0 z-50 bg-menu-glass backdrop-blur-[40px] overflow-y-auto transition-opacity duration-300 ${
+          className={`2xl:hidden mobile-overlay fixed inset-0 z-50 bg-menu-glass backdrop-blur-[40px] overflow-y-auto transition-opacity duration-300 ${
             mobileVisible ? 'opacity-100' : 'opacity-0'
           }`}
         >
