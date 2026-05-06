@@ -168,3 +168,48 @@
     animation: none;
   }
 }
+
+/* Header: mobile nav до 1433px, desktop nav после 1433px */
+@media (min-width: 1280px) and (max-width: 1432px) {
+  /* Скрываем десктоп-навигацию */
+  header nav.desktop-nav {
+    display: none !important;
+  }
+  /* Скрываем десктоп кнопку contact */
+  header .desktop-contact {
+    display: none !important;
+  }
+  /* Скрываем десктопный переключатель языка */
+  header .desktop-language-switcher {
+    display: none !important;
+  }
+  /* Показываем мобильную кнопку бургера */
+  header .mobile-burger {
+    display: flex !important;
+  }
+  /* Показываем мобильную кнопку GET A QUOTE */
+  header .mobile-cta {
+    display: flex !important;
+  }
+  /* Держим мобильный gap между логотипом и кнопкой */
+  header .header-mobile-actions {
+    gap: 8px !important;
+  }
+  /* Показываем мобильное оверлей-меню */
+  header .mobile-overlay {
+    display: block !important;
+  }
+  /* Header стили как на мобилке */
+  header {
+    background-color: transparent !important;
+  }
+  header > div:first-child {
+    width: 100%;
+    padding: 0;
+    max-width: 100%;
+  }
+  header > div:first-child > div:first-child {
+    border-radius: 0 !important;
+    padding: 8px !important;
+  }
+}
