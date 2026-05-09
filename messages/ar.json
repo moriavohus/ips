@@ -9,7 +9,26 @@
     "documents": "الوثائق",
     "contact": "اتصل بنا",
     "blog": "المدونة",
-    "getQuote": "طلب عرض سعر"
+    "getQuote": "طلب عرض سعر",
+    "downloadTechDatasheets": "تحميل أوراق البيانات الفنية"
+  },
+  "buttons": {
+    "learnMore": "اعرف المزيد",
+    "contactUs": "تواصل معنا",
+    "getQuote": "طلب عرض سعر",
+    "downloadPdf": "تحميل PDF",
+    "downloadDatasheet": "تحميل ورقة البيانات",
+    "downloadTechDatasheets": "تحميل أوراق البيانات الفنية",
+    "view": "عرض",
+    "viewProducts": "عرض المنتجات",
+    "viewServices": "عرض الخدمات",
+    "explore": "استكشف",
+    "exploreAboutUs": "عن الشركة",
+    "requestQuote": "طلب عرض سعر",
+    "sendForm": "إرسال",
+    "sending": "جارٍ الإرسال...",
+    "sendMessage": "إرسال الرسالة",
+    "backToHome": "العودة إلى الرئيسية"
   },
   "hero": {
     "title": "العزل الصناعي — مُصنّع في الإمارات، مُصمّم لدول الخليج",
@@ -88,12 +107,14 @@
     },
     "downloadDatasheet": "تحميل ورقة البيانات",
     "viewAll": "عرض جميع المنتجات",
-    "requestQuote": "طلب عرض سعر"
+    "requestQuote": "طلب عرض سعر",
+    "view": "عرض"
   },
   "services": {
     "eyebrow": "الخدمات الهندسية",
     "title": "الدعم الهندسي عبر دورة حياة المشروع الكاملة",
     "subtitle": "يعمل فريقنا جنباً إلى جنب مع مقاولي EPC ومشغلي المصانع — من التصميم المبكر إلى التركيب في الموقع.",
+    "explore": "استكشف",
     "designCalc": {
       "name": "التصميم والحساب",
       "fullName": "حسابات التصميم الحراري والميكانيكي",
@@ -355,6 +376,7 @@
   "industries": {
     "eyebrow": "القطاعات",
     "title": "منتجاتنا وخدماتنا مصممة لـ",
+    "view": "عرض",
     "oilGas": {
       "name": "مشغلو النفط والغاز",
       "fullName": "النفط والغاز (بري / بحري)",

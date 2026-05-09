@@ -16,6 +16,7 @@ interface WhyChooseUsProps {
 
 export default function WhyChooseUs({ namespace = "whyChooseUs" }: WhyChooseUsProps = {}) {
     const t = useTranslations(namespace);
+    const buttons = useTranslations("buttons");
 
     return (
         <SectionWrapper id="why-choose-us" bg="white">
@@ -80,7 +81,7 @@ export default function WhyChooseUs({ namespace = "whyChooseUs" }: WhyChooseUsPr
                         href="/about"
                         className="bg-type-brand hover:bg-black transition-colors text-white font-sans text-[16px] md:text-[18px] font-medium leading-[1.1] tracking-[0.02em] uppercase px-[30px] md:px-[40px] rounded-[14px] flex h-[56px] items-center justify-center gap-2 w-full md:w-fit"
                     >
-                        {t("button")}
+                        {buttons("exploreAboutUs")}
                     </Link>
             </div>
         </SectionWrapper>

@@ -8,6 +8,7 @@ import { scrollToContactForm } from "@/lib/utils";
 
 export default function Hero() {
   const t = useTranslations("hero");
+  const buttons = useTranslations("buttons");
   const heroTitle = t("title").replace("Insulation —", "Insulation\u00A0—");
 
   return (
@@ -40,7 +41,7 @@ export default function Hero() {
                     onClick={scrollToContactForm}
                     className="w-full sm:w-fit"
                   >
-                    {t("cta")}
+                    {buttons("getQuote")}
                   </Button>
                 </div>
               </div>

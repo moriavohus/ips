@@ -1,5 +1,6 @@
 "use client";
 
+import { useTranslations } from "next-intl";
 import Image from "next/image";
 import Button from "@/components/ui/Button";
 import Breadcrumbs from "@/components/ui/Breadcrumbs";
@@ -16,6 +17,8 @@ interface ServiceHeroProps {
 }
 
 export default function ServiceHero({ data }: ServiceHeroProps) {
+    const buttons = useTranslations("buttons");
+
     return (
         <section className="bg-white">
             {/* Top Banner Image */}
@@ -59,7 +62,7 @@ export default function ServiceHero({ data }: ServiceHeroProps) {
                             onClick={scrollToContactForm}
                             className="w-full sm:w-fit"
                         >
-                            Get a quote
+                            {buttons("getQuote")}
                         </Button>
                     </div>
 

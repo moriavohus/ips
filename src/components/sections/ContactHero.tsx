@@ -7,6 +7,7 @@ import Breadcrumbs from "@/components/ui/Breadcrumbs";
 export default function ContactHero() {
     const t = useTranslations("contact");
     const tc = useTranslations("cta");
+    const buttons = useTranslations("buttons");
     const breadcrumbParts = t("breadcrumb").split(">").map((part) => part.trim()).filter(Boolean);
 
     return (
@@ -90,7 +91,7 @@ export default function ContactHero() {
                             </div>
                             <div>
                                 <button type="submit" className="bg-white hover:bg-gray-200 text-black font-bold py-4 px-10 rounded-[8px] uppercase text-[14px] transition-colors">
-                                    {tc("button")}
+                                    {buttons("sendForm")}
                                 </button>
                             </div>
                         </form>

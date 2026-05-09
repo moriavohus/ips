@@ -13,6 +13,7 @@ const services = [
 
 export default function ServicesBlock() {
   const t = useTranslations("services");
+  const buttons = useTranslations("buttons");
 
   return (
     <SectionWrapper id="services" bg="white">
@@ -48,7 +49,7 @@ export default function ServicesBlock() {
                   </div>
 
                   <div className="flex items-center gap-2 md:opacity-0 md:group-hover:opacity-100 transition-opacity text-type-brand md:shrink-0">
-                    <span className="font-sans text-caps-bold tracking-[0.05em] uppercase">EXPLORE</span>
+                    <span className="font-sans text-caps-bold tracking-[0.05em] uppercase">{buttons("explore")}</span>
                     <ChevronRight />
                   </div>
                 </Link>

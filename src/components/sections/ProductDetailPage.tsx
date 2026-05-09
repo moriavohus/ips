@@ -16,6 +16,7 @@ type Props = {
 
 export default function ProductDetailPage({ productKey, specs }: Props) {
   const t = useTranslations("products");
+  const buttons = useTranslations("buttons");
   const tc = useTranslations("common");
 
   return (
@@ -68,10 +69,10 @@ export default function ProductDetailPage({ productKey, specs }: Props) {
 
             <div className="flex flex-col sm:flex-row flex-wrap gap-3 mt-8">
               <Button onClick={scrollToContactForm} className="w-full sm:w-fit">
-                {t("requestQuote")}
+                {buttons("requestQuote")}
               </Button>
               <Button variant="outline" className="w-full sm:w-fit">
-                {t("downloadDatasheet")}
+                {buttons("downloadDatasheet")}
               </Button>
             </div>
           </div>

@@ -16,6 +16,7 @@ type ProductKey = "cellularGlass" | "mineralWool" | "stainlessAccessories" | "co
 export default function ProductsPageContent({ initialProduct }: { initialProduct?: ProductKey } = {}) {
   const t = useTranslations("productPortfolio");
   const nav = useTranslations("nav");
+  const buttons = useTranslations("buttons");
 
   return (
     <>
@@ -46,7 +47,7 @@ export default function ProductsPageContent({ initialProduct }: { initialProduct
             onClick={scrollToContactForm}
             className="w-full sm:w-fit"
           >
-            {nav("getQuote", { fallback: "Get a quote" })}
+            {buttons("getQuote")}
           </Button>
         </div>
       </SectionWrapper>

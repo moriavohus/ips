@@ -11,6 +11,7 @@ const errorFieldClassName = "ring-1 ring-red-400 focus:ring-red-400";
 
 export default function CTAForm() {
   const t = useTranslations("cta");
+  const buttons = useTranslations("buttons");
   const [status, setStatus] = useState<"idle" | "loading" | "success" | "error">("idle");
   const [statusMessage, setStatusMessage] = useState("");
   const [errors, setErrors] = useState<FieldErrors>({});
@@ -175,7 +176,7 @@ export default function CTAForm() {
           disabled={status === "loading"}
           className="w-fit rounded-[14px] bg-white px-[30px] py-[16px] font-sans text-body-sm font-medium uppercase leading-[1.1] tracking-[0.02em] text-type-primary transition-colors hover:bg-background md:px-[40px] md:py-[20px] md:text-caps disabled:opacity-50"
         >
-          {status === "loading" ? "Sending..." : t("button")}
+          {status === "loading" ? buttons("sending") : buttons("sendForm")}
         </button>
       </form>
     </div>

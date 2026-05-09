@@ -1,5 +1,6 @@
 "use client";
 
+import { useTranslations } from "next-intl";
 import Image from "next/image";
 import Button from "@/components/ui/Button";
 import Breadcrumbs from "@/components/ui/Breadcrumbs";
@@ -15,6 +16,8 @@ interface IndustryHeroProps {
 }
 
 export default function IndustryHero({ data }: IndustryHeroProps) {
+    const buttons = useTranslations("buttons");
+
     return (
         <section className="relative h-[80vh] min-h-[80vh] w-full flex items-end overflow-hidden -mt-[112px] lg:h-[80svh] lg:min-h-[80svh]">
             {/* Background with Image */}
@@ -76,7 +79,7 @@ export default function IndustryHero({ data }: IndustryHeroProps) {
                             onClick={scrollToContactForm}
                             className="text-type-brand shadow-2xl w-full sm:w-fit"
                         >
-                            Get a quote
+                            {buttons("getQuote")}
                         </Button>
                     </div>
 

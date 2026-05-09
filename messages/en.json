@@ -9,7 +9,26 @@
     "documents": "DOCUMENTS",
     "contact": "CONTACT",
     "blog": "Blog",
-    "getQuote": "Get A Quote"
+    "getQuote": "Get A Quote",
+    "downloadTechDatasheets": "Download Tech Datasheets"
+  },
+  "buttons": {
+    "learnMore": "Learn more",
+    "contactUs": "Contact us",
+    "getQuote": "Get a quote",
+    "downloadPdf": "Download PDF",
+    "downloadDatasheet": "Download datasheet",
+    "downloadTechDatasheets": "Download Tech Datasheets",
+    "view": "View",
+    "viewProducts": "View products",
+    "viewServices": "View services",
+    "explore": "Explore",
+    "exploreAboutUs": "Explore about us",
+    "requestQuote": "Request quote",
+    "sendForm": "Send form",
+    "sending": "Sending...",
+    "sendMessage": "Send message",
+    "backToHome": "Back to home"
   },
   "hero": {
     "title": "Industrial Insulation — Manufactured in the UAE, Engineered for the GCC",
@@ -88,12 +107,14 @@
     },
     "downloadDatasheet": "Download Datasheet",
     "viewAll": "View All Products",
-    "requestQuote": "Request Quote"
+    "requestQuote": "Request Quote",
+    "view": "View"
   },
   "services": {
     "eyebrow": "ENGINEERING SERVICES",
     "title": "Engineering Support Across the Full Project Lifecycle",
     "subtitle": "Our team works alongside EPC contractors and plant operators — from early-stage design through to site installation.",
+    "explore": "Explore",
     "designCalc": {
       "name": "Design & Calculation",
       "fullName": "Thermal and Mechanical Design Calculations",
@@ -355,6 +376,7 @@
   "industries": {
     "eyebrow": "INDUSTRIES",
     "title": "Our products and services are designed for",
+    "view": "View",
     "oilGas": {
       "name": "Oil & Gas Operators",
       "fullName": "Oil & Gas (Onshore / Offshore)",

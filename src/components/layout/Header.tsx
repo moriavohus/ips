@@ -10,6 +10,7 @@ import LanguageSwitcher from "@/components/layout/LanguageSwitcher";
 
 export default function Header() {
   const t = useTranslations("nav");
+  const buttons = useTranslations("buttons");
   const ts = useTranslations("services");
   const ti = useTranslations("industries");
   const tp = useTranslations("products");
@@ -132,13 +133,13 @@ export default function Header() {
                 </div>
               </div>
             </Link>
-            {/* Mobile: GET A QUOTE button */}
+            {/* Mobile: quote button */}
             <button
               type="button"
               onClick={scrollToContactForm}
               className="xl:hidden h-full mobile-cta bg-black-primary text-white rounded-[10px] font-sans text-[16px] font-medium uppercase tracking-[0.02em] transition-colors flex items-center justify-center whitespace-nowrap px-5"
             >
-                GET A QUOTE
+                {buttons("getQuote")}
             </button>
           </div>
 
@@ -355,7 +356,7 @@ export default function Header() {
                 onClick={closeMobileMenu}
                 className="flex items-center justify-center gap-3 font-sans text-button-mobile text-type-primary uppercase py-3"
               >
-                <span>Download Tech Datasheets</span>
+                <span>{buttons("downloadTechDatasheets")}</span>
                 <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
                   <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4" />
                   <polyline points="7 10 12 15 17 10" />

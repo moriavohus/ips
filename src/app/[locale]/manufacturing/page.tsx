@@ -10,6 +10,7 @@ import Breadcrumbs from "@/components/ui/Breadcrumbs";
 export default function ManufacturingPage() {
     const t = useTranslations("manufacturing");
     const nav = useTranslations("nav");
+    const buttons = useTranslations("buttons");
 
     type StepOption = { num: string; title: string; text: string };
     type SpecItem = { left: string; right: string };
@@ -41,7 +42,7 @@ export default function ManufacturingPage() {
                 }
                 title={t("hero.title")}
                 subtitle={t("hero.subtitle")}
-                ctaText={t("hero.cta")}
+                ctaText={buttons("viewProducts")}
                 ctaHref="/products"
                 imageSrc="/images/DOCUMENTS/Portfolio%20Header/12.png"
                 imageAlt="Manufacturing Hub"

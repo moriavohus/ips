@@ -18,6 +18,7 @@ interface IndustriesMapProps {
 
 export default function IndustriesMap({ variant = "default" }: IndustriesMapProps) {
   const t = useTranslations("industries");
+  const buttons = useTranslations("buttons");
 
   const sectionId = variant === "navigation" ? "industries-nav" : "industries";
   const wrapperClasses = variant === "navigation"
@@ -92,7 +93,7 @@ export default function IndustriesMap({ variant = "default" }: IndustriesMapProp
                     )}
 
                     <div className="w-[109px] h-[56px] flex items-center justify-center gap-2 mt-auto rounded-[8px] bg-background group-hover:bg-border-subtle transition-colors">
-                      <span className="font-sans text-[15px] font-medium leading-[1.1] uppercase text-black-primary">VIEW</span>
+                      <span className="font-sans text-[15px] font-medium leading-[1.1] uppercase text-black-primary">{buttons("view")}</span>
                       <div className="text-black-primary w-3 h-3 flex items-center justify-center">
                         <ChevronRight />
                       </div>

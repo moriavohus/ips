@@ -8,6 +8,7 @@ import { scrollToContactForm } from "@/lib/utils";
 
 export default function DocumentsHero() {
     const t = useTranslations("documents");
+    const buttons = useTranslations("buttons");
     const breadcrumbParts = t("breadcrumb").split(">").map((part) => part.trim()).filter(Boolean);
 
     return (
@@ -39,7 +40,7 @@ export default function DocumentsHero() {
                                     onClick={scrollToContactForm}
                                     className="w-full sm:w-fit"
                                 >
-                                    {t("cta")}
+                                    {buttons("getQuote")}
                                 </Button>
                             </div>
                         </div>

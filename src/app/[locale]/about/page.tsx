@@ -22,6 +22,7 @@ import Breadcrumbs from "@/components/ui/Breadcrumbs";
 
 export default function AboutPage() {
   const t = useTranslations("about");
+  const buttons = useTranslations("buttons");
 
   const safeRawArr = (key: string) => {
     try {
@@ -48,7 +49,7 @@ export default function AboutPage() {
         }
         title={t("title")}
         subtitle={t("subtitle")}
-        ctaText={t("cta")}
+        ctaText={buttons("getQuote")}
         ctaHref="/contact"
         imageSrc="/images/about_hero.png"
         imageAlt="About IPS Middle East"

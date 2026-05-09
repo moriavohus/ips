@@ -33,6 +33,7 @@ const products = [
 
 export default function ProductGrid() {
   const t = useTranslations("products");
+  const buttons = useTranslations("buttons");
 
   return (
     <SectionWrapper id="products" bg="white">
@@ -97,7 +98,7 @@ export default function ProductGrid() {
                     </div>
                     <div className="relative flex-1 flex items-center justify-center font-sans text-[18px] font-medium leading-[1.1] uppercase overflow-hidden">
                       <span className="absolute inset-0 bg-type-brand translate-y-full group-hover:translate-y-0 transition-transform duration-300 ease-out" />
-                      <span className="relative z-10 text-type-primary transition-colors duration-300 group-hover:text-white">VIEW</span>
+                      <span className="relative z-10 text-type-primary transition-colors duration-300 group-hover:text-white">{buttons("view")}</span>
                     </div>
                     <div className="w-[64px] min-w-[64px] flex items-center justify-center border-l border-transparent group-hover:border-black/10 transition-colors">
                       <CornerCurve className="w-5 h-5 lg:w-6 lg:h-6 text-type-third transition-colors group-hover:text-type-brand" />
