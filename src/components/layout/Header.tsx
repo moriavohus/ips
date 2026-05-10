@@ -144,7 +144,7 @@ export default function Header() {
           </div>
 
           {/* Desktop Navigation */}
-          <nav className="hidden xl:flex items-center justify-center gap-4 xl:gap-6 h-full desktop-nav">
+          <nav className="hidden xl:flex items-center justify-center gap-2 xl:gap-3 h-full desktop-nav">
             {links.map((link) => {
               const isOpen = link.hasDropdown && dropdownOpen === link.id;
               const isActive = pathname.startsWith(link.href);
@@ -164,7 +164,7 @@ export default function Header() {
                   <Link
                     href={link.href}
                     className={`
-                      font-sans text-nav-link font-normal flex items-center gap-1.5 px-4 h-full rounded-[10px] transition-all group
+                      font-sans text-nav-link font-normal flex items-center gap-1.5 px-2 h-full rounded-[10px] transition-all group
                       ${isOpen
                         ? 'bg-black-primary text-white'
                         : isActive

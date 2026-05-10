@@ -217,8 +217,10 @@
 /* Header: desktop nav на всю ширину между tablet cutoff и 1920px */
 @media (min-width: 1433px) and (max-width: 1919px) {
   header > div:first-child {
-    width: 100%;
-    max-width: 100%;
+    width: 100vw;
+    max-width: none;
+    margin-left: calc(50% - 50vw);
+    margin-right: calc(50% - 50vw);
     padding-left: 20px;
     padding-right: 20px;
   }
