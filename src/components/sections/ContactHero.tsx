@@ -79,7 +79,7 @@ export default function ContactHero() {
                                     {tc("fields.message")}
                                 </label>
                                 <textarea
-                                    placeholder="Tell us about your project..."
+                                    placeholder={tc("fields.messagePlaceholder")}
                                     className="bg-white/20 rounded-[4px] p-4 text-white font-sans text-[19px] leading-[1.4] h-[81px] resize-none focus:outline-none focus:bg-white/30 transition-colors placeholder:text-white"
                                 ></textarea>
                             </div>

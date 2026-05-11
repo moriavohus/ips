@@ -18,6 +18,7 @@ interface ServiceHeroProps {
 
 export default function ServiceHero({ data }: ServiceHeroProps) {
     const buttons = useTranslations("buttons");
+    const nav = useTranslations("nav");
 
     return (
         <section className="bg-white">
@@ -43,7 +44,7 @@ export default function ServiceHero({ data }: ServiceHeroProps) {
                         <div className="mb-6">
                             <Breadcrumbs
                                 items={[
-                                    { label: "HOME", href: "/" },
+                                    { label: nav("home"), href: "/" },
                                     { label: data.fullName.toUpperCase() },
                                 ]}
                             />

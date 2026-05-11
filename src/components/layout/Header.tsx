@@ -11,6 +11,7 @@ import LanguageSwitcher from "@/components/layout/LanguageSwitcher";
 export default function Header() {
   const t = useTranslations("nav");
   const buttons = useTranslations("buttons");
+  const footerLinks = useTranslations("footer.links");
   const ts = useTranslations("services");
   const ti = useTranslations("industries");
   const tp = useTranslations("products");
@@ -49,9 +50,9 @@ export default function Header() {
       hasDropdown: true,
       id: "about",
       items: [
-        { label: "MISSION & VISION", href: "/about#mission" },
-        { label: "VALUES", href: "/about#values" },
-        { label: "GLOBAL NETWORK", href: "/about#network" },
+        { label: footerLinks("about.mission"), href: "/about#mission" },
+        { label: footerLinks("about.values"), href: "/about#values" },
+        { label: footerLinks("about.network"), href: "/about#network" },
       ],
     },
     {
@@ -103,10 +104,10 @@ export default function Header() {
       hasDropdown: true,
       id: "documents",
       items: [
-        { label: "TECHNICAL DATASHEETS", href: "/documents#datasheets" },
-        { label: "PRODUCT BROCHURES", href: "/documents#brochures" },
-        { label: "INSTALLATION GUIDELINES", href: "/documents#guidelines" },
-        { label: "COMPANY PRESENTATION", href: "/documents#presentation" },
+        { label: footerLinks("documents.datasheets"), href: "/documents#datasheets" },
+        { label: footerLinks("documents.brochures"), href: "/documents#brochures" },
+        { label: footerLinks("documents.guidelines"), href: "/documents#guidelines" },
+        { label: footerLinks("documents.presentation"), href: "/documents#presentation" },
       ],
     },
   ];
@@ -164,7 +165,7 @@ export default function Header() {
                   <Link
                     href={link.href}
                     className={`
-                      font-sans text-nav-link font-normal flex items-center gap-1.5 px-2 h-full rounded-[10px] transition-all group
+                      font-sans text-nav-link font-normal flex items-center gap-1.5 px-4 h-full rounded-[10px] transition-all group
                       ${isOpen
                         ? 'bg-black-primary text-white'
                         : isActive

@@ -9,6 +9,7 @@ import { scrollToContactForm } from "@/lib/utils";
 export default function Hero() {
   const t = useTranslations("hero");
   const buttons = useTranslations("buttons");
+  const nav = useTranslations("nav");
   const heroTitle = t("title").replace("Insulation —", "Insulation\u00A0—");
 
   return (
@@ -20,7 +21,7 @@ export default function Hero() {
               {/* Left Content Column - Span 6 cols */}
               <div className="order-2 lg:order-1 lg:col-span-6 px-0 pt-0 lg:p-[20px] flex flex-col relative z-10 w-full rounded-t-[24px] lg:rounded-l-[24px] lg:rounded-tr-none bg-white">
                 <div className="mb-[20px] lg:mb-6">
-                  <span className="text-caps-style text-type-primary">HOME</span>
+                  <span className="text-caps-style text-type-primary">{nav("home")}</span>
                 </div>
 
                 <div className="flex-1">

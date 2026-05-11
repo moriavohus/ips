@@ -8,16 +8,17 @@ import Breadcrumbs from "@/components/ui/Breadcrumbs";
 export default function DocumentsPage() {
   const td = useTranslations("documents");
   const t = useTranslations("contact");
+  const breadcrumbParts = td("breadcrumb").split(">").map((part) => part.trim()).filter(Boolean);
 
   return (
     <main className="bg-white">
       <SplitHero
         breadcrumb={
           <Breadcrumbs
-            items={[
-              { label: "HOME", href: "/" },
-              { label: "DOCUMENTS" },
-            ]}
+            items={breadcrumbParts.map((label, index) => ({
+              label,
+              href: index === 0 ? "/" : undefined,
+            }))}
           />
         }
         title={td("title")}

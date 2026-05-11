@@ -631,7 +631,20 @@
       "phone": "الهاتف",
       "message": "الرسالة",
       "messagePlaceholder": "أخبرنا عن مشروعك...",
-      "terms": "Checkbox"
+      "terms": "أوافق على سياسة الخصوصية *"
+    },
+    "validation": {
+      "nameRequired": "يرجى إدخال اسمك.",
+      "companyRequired": "يرجى إدخال اسم الشركة.",
+      "emailRequired": "يرجى إدخال البريد الإلكتروني.",
+      "emailInvalid": "يرجى إدخال بريد إلكتروني صحيح.",
+      "phoneRequired": "يرجى إدخال رقم الهاتف.",
+      "termsRequired": "يرجى الموافقة على سياسة الخصوصية."
+    },
+    "status": {
+      "validationError": "يرجى ملء الحقول المحددة.",
+      "success": "تم إرسال رسالتك بنجاح.",
+      "error": "حدث خطأ ما. يرجى المحاولة مرة أخرى."
     },
     "button": "إرسال"
   },
@@ -773,6 +786,8 @@
     "breadcrumb": "الرئيسية > الوثائق",
     "title": "توفر IPS Middle East وثائق فنية كاملة لدعم فرق الهندسة والمشتريات والتركيب عبر دول الخليج.",
     "cta": "إرسال طلب",
+    "availableLabel": "الوثائق المتاحة",
+    "includesLabel": "تتضمن كل ورقة بيانات:",
     "sections": {
       "datasheets": {
         "num": "1",

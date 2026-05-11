@@ -43,18 +43,18 @@ export default function CTAForm() {
     const termsAccepted = (form.elements.namedItem("terms") as HTMLInputElement).checked;
     const nextErrors: FieldErrors = {};
 
-    if (!data.name.trim()) nextErrors.name = "Please enter your name.";
-    if (!data.company.trim()) nextErrors.company = "Please enter your company.";
-    if (!data.email.trim()) nextErrors.email = "Please enter your email.";
-    else if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(data.email)) nextErrors.email = "Please enter a valid email.";
-    if (!data.phone.trim()) nextErrors.phone = "Please enter your phone.";
-    if (!termsAccepted) nextErrors.terms = "Please accept the Privacy Policy.";
+    if (!data.name.trim()) nextErrors.name = t("validation.nameRequired");
+    if (!data.company.trim()) nextErrors.company = t("validation.companyRequired");
+    if (!data.email.trim()) nextErrors.email = t("validation.emailRequired");
+    else if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(data.email)) nextErrors.email = t("validation.emailInvalid");
+    if (!data.phone.trim()) nextErrors.phone = t("validation.phoneRequired");
+    if (!termsAccepted) nextErrors.terms = t("validation.termsRequired");
 
     setErrors(nextErrors);
 
     if (Object.keys(nextErrors).length > 0) {
       setStatus("error");
-      setStatusMessage("Please fill in the highlighted fields.");
+      setStatusMessage(t("status.validationError"));
       return;
     }
 
@@ -69,16 +69,16 @@ export default function CTAForm() {
 
       if (res.ok) {
         setStatus("success");
-        setStatusMessage("Your message has been sent successfully.");
+        setStatusMessage(t("status.success"));
         setErrors({});
         form.reset();
       } else {
         setStatus("error");
-        setStatusMessage("Something went wrong. Please try again.");
+        setStatusMessage(t("status.error"));
       }
     } catch {
       setStatus("error");
-      setStatusMessage("Something went wrong. Please try again.");
+      setStatusMessage(t("status.error"));
     }
   }
 
@@ -158,7 +158,7 @@ export default function CTAForm() {
               onChange={() => clearError("terms")}
             />
             <label htmlFor="terms" className="cursor-pointer font-sans text-[14px] font-normal leading-[1.5] text-white">
-              I agree to the Privacy Policy *
+              {t("fields.terms")}
             </label>
           </div>
           {errors.terms && <p className="font-sans text-[13px] text-red-300">{errors.terms}</p>}

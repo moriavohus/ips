@@ -17,6 +17,7 @@ interface IndustryHeroProps {
 
 export default function IndustryHero({ data }: IndustryHeroProps) {
     const buttons = useTranslations("buttons");
+    const nav = useTranslations("nav");
 
     return (
         <section className="relative h-[80vh] min-h-[80vh] w-full flex items-end overflow-hidden -mt-[112px] lg:h-[80svh] lg:min-h-[80svh]">
@@ -46,7 +47,7 @@ export default function IndustryHero({ data }: IndustryHeroProps) {
                         <div className="mb-0">
                             <Breadcrumbs
                                 items={[
-                                    { label: "HOME", href: "/" },
+                                    { label: nav("home"), href: "/" },
                                     { label: data.fullName.toUpperCase() },
                                 ]}
                                 variant="inverse"

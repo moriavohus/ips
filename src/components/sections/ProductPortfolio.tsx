@@ -181,12 +181,12 @@ export default function ProductPortfolio({ initialProduct = "cellularGlass" }: {
                                     key={key}
                                     onClick={() => handleProductChange(key)}
                                     className={`flex items-center gap-3 text-left w-fit p-0 font-sans text-body-bold transition-colors ${isActive ? "text-type-primary" : "text-gray-dark hover:text-type-primary"
-                                        }`}
+                                    }`}
                                 >
                                     {isActive ? (
-                                        <Image src="/images/Checkbox:active.svg" alt="Active" width={16} height={16} />
+                                        <Image src="/images/Checkbox:active.svg" alt="" aria-hidden="true" width={16} height={16} />
                                     ) : (
-                                        <Image src="/images/Checkbox.svg" alt="Inactive" width={16} height={16} />
+                                        <Image src="/images/Checkbox.svg" alt="" aria-hidden="true" width={16} height={16} />
                                     )}
                                     {t(`products.${key}.name`)}
                                 </button>

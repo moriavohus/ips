@@ -17,16 +17,18 @@ interface DocSectionProps {
     points: string[];
     items: DocItem[];
     showLabel?: boolean;
+    availableLabel: string;
+    includesLabel: string;
 }
 
-function DocSection({ id, num, title, subtitle, points, items, showLabel }: DocSectionProps) {
+function DocSection({ id, num, title, subtitle, points, items, showLabel, availableLabel, includesLabel }: DocSectionProps) {
     return (
         <div id={id} className="mb-16 lg:mb-20 last:mb-0 scroll-mt-28 flex w-full flex-col items-start gap-[40px] p-[20px] md:gap-16 md:p-10">
             {/* Header Content */}
             <div className="w-full">
                 {showLabel && (
                     <span className="font-sans text-[16px] font-bold text-type-primary uppercase leading-[1.1] mb-10 block">
-                        AVAILABLE DOCUMENTS
+                        {availableLabel}
                     </span>
                 )}
 
@@ -42,7 +44,7 @@ function DocSection({ id, num, title, subtitle, points, items, showLabel }: DocS
                 </p>
 
                 <div className="mb-5">
-                    <p className="text-body-mobile md:text-body text-type-primary mb-2">Each datasheet includes:</p>
+                    <p className="text-body-mobile md:text-body text-type-primary mb-2">{includesLabel}</p>
                     <ul className="space-y-1">
                         {points.map((pt, i) => (
                             <li key={i} className="flex items-baseline gap-3 text-body-mobile md:text-body text-type-primary">
@@ -63,6 +65,7 @@ function DocSection({ id, num, title, subtitle, points, items, showLabel }: DocS
 }
 
 export default function DocumentList() {
+    const documents = useTranslations("documents");
     const t = useTranslations("documents.sections");
 
     const sections = ["datasheets", "brochures", "guidelines", "presentation"];
@@ -82,6 +85,8 @@ export default function DocumentList() {
                             points={section.points}
                             items={section.items}
                             showLabel={idx === 0}
+                            availableLabel={documents("availableLabel")}
+                            includesLabel={documents("includesLabel")}
                         />
                     );
                 })}
@@ -89,7 +94,7 @@ export default function DocumentList() {
                 <div className="w-full flex justify-center">
                     <div className="w-full self-stretch border-t border-black-third px-[40px] py-[20px]">
                         <p className="w-full text-body-mobile md:text-body text-type-primary whitespace-pre-line">
-                            {useTranslations("documents")("footerNotice")}
+                            {documents("footerNotice")}
                         </p>
                     </div>
                 </div>

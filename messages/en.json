@@ -631,7 +631,20 @@
       "phone": "Phone",
       "message": "Message",
       "messagePlaceholder": "Tell us about your project...",
-      "terms": "Checkbox"
+      "terms": "I agree to the Privacy Policy *"
+    },
+    "validation": {
+      "nameRequired": "Please enter your name.",
+      "companyRequired": "Please enter your company.",
+      "emailRequired": "Please enter your email.",
+      "emailInvalid": "Please enter a valid email.",
+      "phoneRequired": "Please enter your phone.",
+      "termsRequired": "Please accept the Privacy Policy."
+    },
+    "status": {
+      "validationError": "Please fill in the highlighted fields.",
+      "success": "Your message has been sent successfully.",
+      "error": "Something went wrong. Please try again."
     },
     "button": "SEND FORM"
   },
@@ -773,6 +786,8 @@
     "breadcrumb": "HOME > DOCUMENTS",
     "title": "IPS Middle East provides complete technical documentation to support engineering, procurement, and installation teams across the GCC.",
     "cta": "GET A QUOTE",
+    "availableLabel": "Available documents",
+    "includesLabel": "Each datasheet includes:",
     "sections": {
       "datasheets": {
         "num": "1",

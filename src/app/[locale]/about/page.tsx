@@ -23,6 +23,7 @@ import Breadcrumbs from "@/components/ui/Breadcrumbs";
 export default function AboutPage() {
   const t = useTranslations("about");
   const buttons = useTranslations("buttons");
+  const breadcrumbParts = t("breadcrumb").split(">").map((part) => part.trim()).filter(Boolean);
 
   const safeRawArr = (key: string) => {
     try {
@@ -41,10 +42,10 @@ export default function AboutPage() {
       <SplitHero
         breadcrumb={
           <Breadcrumbs
-            items={[
-              { label: "HOME", href: "/" },
-              { label: "ABOUT US" },
-            ]}
+            items={breadcrumbParts.map((label, index) => ({
+              label,
+              href: index === 0 ? "/" : undefined,
+            }))}
           />
         }
         title={t("title")}
