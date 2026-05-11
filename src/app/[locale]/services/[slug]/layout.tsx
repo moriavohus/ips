@@ -1,4 +1,5 @@
 import { Metadata } from "next";
+import { localizedAlternates } from "@/lib/seo";
 
 const serviceMeta: Record<string, Record<string, { title: string; desc: string }>> = {
   "design-calculation": {
@@ -31,7 +32,7 @@ const serviceMeta: Record<string, Record<string, { title: string; desc: string }
 export async function generateMetadata({ params }: { params: Promise<{ locale: string; slug: string }> }): Promise<Metadata> {
   const { locale, slug } = await params;
   const meta = serviceMeta[slug]?.[locale] || serviceMeta[slug]?.en || { title: "Services — IPS Middle East", desc: "Industrial insulation services" };
-  return { title: meta.title, description: meta.desc, openGraph: { title: meta.title, description: meta.desc } };
+  return { title: meta.title, description: meta.desc, alternates: localizedAlternates(locale, `/services/${slug}`), openGraph: { title: meta.title, description: meta.desc } };
 }
 
 export default function ServiceLayout({ children }: { children: React.ReactNode }) {

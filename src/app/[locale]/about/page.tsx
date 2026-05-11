@@ -1,10 +1,11 @@
 import { Metadata } from "next";
+import { localizedAlternates } from "@/lib/seo";
 
 export async function generateMetadata({ params }: { params: Promise<{ locale: string }> }): Promise<Metadata> {
   const { locale } = await params;
   const titles: Record<string, string> = { en: "About — IPS Middle East", ar: "عن الشركة — IPS الشرق الأوسط", ru: "О компании — IPS Ближний Восток" };
   const desc: Record<string, string> = { en: "About IPS Middle East — leading industrial insulation manufacturer in UAE and GCC.", ar: "عن IPS الشرق الأوسط — شركة رائدة في العزل الصناعي", ru: "О компании IPS — ведущий производитель промышленной изоляции в ОАЭ" };
-  return { title: titles[locale] || titles.en, description: desc[locale] || desc.en, openGraph: { title: titles[locale] || titles.en, description: desc[locale] || desc.en } };
+  return { title: titles[locale] || titles.en, description: desc[locale] || desc.en, alternates: localizedAlternates(locale, "/about"), openGraph: { title: titles[locale] || titles.en, description: desc[locale] || desc.en } };
 }
 
 import { useTranslations } from "next-intl";

@@ -1,3 +1,5 @@
+import { Metadata } from "next";
+import { localizedAlternates } from "@/lib/seo";
 import IndustryContent from "./IndustryContent";
 
 const SLUG_TO_KEY: Record<string, string> = {
@@ -6,6 +8,14 @@ const SLUG_TO_KEY: Record<string, string> = {
     "lng-cryogenic": "lng",
     "power-generation": "power",
 };
+
+export async function generateMetadata({ params }: { params: Promise<{ locale: string; slug: string }> }): Promise<Metadata> {
+    const { locale, slug } = await params;
+
+    return {
+        alternates: localizedAlternates(locale, `/industries/${slug}`),
+    };
+}
 
 interface Props {
     params: {
