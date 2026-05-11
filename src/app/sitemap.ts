@@ -22,8 +22,10 @@ export default function sitemap(): MetadataRoute.Sitemap {
 
   for (const page of pages) {
     for (const locale of locales) {
+      const localePrefix = locale === "en" ? "" : `/${locale}`;
+
       entries.push({
-        url: `${siteUrl}/${locale}${page}`,
+        url: `${siteUrl}${localePrefix}${page || "/"}`,
         lastModified: new Date(),
         changeFrequency: page === "" ? "weekly" : "monthly",
         priority: page === "" ? 1 : 0.8,
