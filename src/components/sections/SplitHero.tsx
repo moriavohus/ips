@@ -48,7 +48,7 @@ export default function SplitHero({
             </div>
 
             <div className="flex-1">
-              <h1 className={titleClassName ?? "font-sans text-[36px] md:text-[46px] xl:text-[58px] font-normal leading-[1] tracking-[-0.02em] text-type-primary mb-6 lg:mb-8"}>
+              <h1 className={titleClassName ?? "font-sans text-[36px] md:text-[46px] xl:text-[58px] font-normal leading-[1] tracking-[-0.02em] text-type-primary mb-6 lg:mb-8 whitespace-pre-line"}>
                 {title}
               </h1>
 
