@@ -10,7 +10,7 @@ export default function Hero() {
   const t = useTranslations("hero");
   const buttons = useTranslations("buttons");
   const nav = useTranslations("nav");
-  const heroTitle = t("title").replace("Insulation –", "Insulation\u00A0–");
+  const heroTitle = t("title").replace(/\s–/, "\u00A0–");
 
   return (
     <section className="bg-white pt-[10px] pb-[32.5px] lg:pb-[40px] min-h-[70vh] flex items-center">

@@ -1,26 +1,12 @@
 import { NextRequest, NextResponse } from "next/server";
-import fs from "fs/promises";
-import path from "path";
 import { isAuthenticated } from "../verify";
+import { readMessages, writeMessages } from "@/lib/admin/messageStore";
 
-const MESSAGES_DIR = path.join(process.cwd(), "messages");
 const VALID_LOCALES = new Set(["en", "ru", "ar"]);
 const VALID_PRODUCTS = new Set(["cellularGlass", "mineralWool", "stainlessAccessories", "coatings"]);
 
 function validateLocale(locale: string): boolean {
   return VALID_LOCALES.has(locale);
-}
-
-async function readMessages(locale: string) {
-  if (!validateLocale(locale)) throw new Error("Invalid locale");
-  const filePath = path.join(MESSAGES_DIR, `${locale}.json`);
-  const content = await fs.readFile(filePath, "utf-8");
-  return JSON.parse(content);
-}
-
-async function writeMessages(locale: string, data: Record<string, unknown>) {
-  const filePath = path.join(MESSAGES_DIR, `${locale}.json`);
-  await fs.writeFile(filePath, JSON.stringify(data, null, 2), "utf-8");
 }
 
 export async function GET() {
@@ -95,7 +81,7 @@ export async function PUT(request: NextRequest) {
       };
     }
 
-    await writeMessages(locale, messages);
+    await writeMessages(locale, messages, `Update ${locale} product: ${productKey}`);
 
     return NextResponse.json({ success: true });
   } catch (error) {

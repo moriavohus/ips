@@ -2,7 +2,7 @@
 
 ## Overview
 
-Admin panel for managing all content on the IPS Middle East website: product detail pages, homepage product cards, and technical documents. The panel supports 3 languages (EN, RU, AR) and includes a one-click rebuild to push changes to production.
+Admin panel for managing all content on the IPS Middle East website: product detail pages, homepage product cards, and technical documents. The panel supports 3 languages (EN, RU, AR). In production, saved edits are committed to GitHub and Netlify publishes the updated site from that commit.
 
 URL: `https://ips.abbit.kz/admin`
 
@@ -33,7 +33,7 @@ SESSION_SECRET=your-random-secret-key-here
 After login you see the dashboard with:
 - **Products** — manage all 4 products (detail pages + homepage cards)
 - **Documents** — manage 4 document sections
-- **Rebuild & Deploy** — rebuild the site so changes appear on the live site
+- **Deploy Changes** — manually trigger a Netlify deploy if needed
 
 ---
 
@@ -103,7 +103,7 @@ Edits the **product card on the homepage** — the preview card visitors see bef
 5. Edit fields. Use **+ Add** buttons to add rows/items, **X** buttons to remove
 6. Click **Save Changes**
 7. Repeat for other languages
-8. Go to Dashboard and click **Rebuild & Deploy**
+8. Netlify deploys automatically after the GitHub commit. Use **Deploy Changes** only if a manual deploy trigger is needed.
 
 ### Adding/Removing Table Rows
 
@@ -150,34 +150,34 @@ Manages 4 document sections:
    - Click **X** to remove a document
    - Click the green link icon to preview a PDF
 7. Click **Save Changes**
-8. Go to Dashboard and click **Rebuild & Deploy**
+8. Netlify deploys automatically after the GitHub commit. Use **Deploy Changes** only if a manual deploy trigger is needed.
 
 ---
 
-## Rebuild & Deploy
+## Deploy Changes
 
-**Important:** The site uses Static Site Generation (SSG). Changes saved through the admin panel update the JSON data files, but the live site serves pre-built HTML pages. You must rebuild to make changes visible.
+**Important:** The site uses Static Site Generation (SSG). In production, changes saved through the admin panel update `messages/*.json` by committing to GitHub. Netlify then rebuilds and publishes the live site from the commit.
 
-### How to Rebuild
+### How to Deploy
 
 1. Go to Dashboard (`/admin/dashboard`)
-2. Click **Rebuild & Deploy**
-3. Wait 20-30 seconds (spinner shows progress)
-4. Green message = success, changes are live
-5. Red message = build failed, check with developer
+2. Usually no action is needed after saving content: Netlify deploys automatically from GitHub.
+3. If a manual deploy is needed, click **Deploy Changes**.
+4. Green message = deploy was triggered or GitHub auto-deploy is expected.
+5. Red message = deploy trigger failed, check Netlify environment variables.
 
-### What Happens During Rebuild
+### What Happens During Save & Deploy
 
-1. `next build` runs — generates all static pages from updated JSON data
-2. `pm2 reload` runs — restarts the server with zero downtime
-3. New pages are served to visitors
+1. Admin API reads the latest `messages/*.json` from GitHub.
+2. Admin API commits the updated JSON file back to GitHub.
+3. Netlify detects the GitHub commit and runs a new build.
+4. New pages are served to visitors after Netlify publishes the build.
 
-### When to Rebuild
+### When to Use Deploy Changes
 
-- After editing any product (detail page or card)
-- After editing any document section
-- After changing content in any language
-- You can batch multiple changes before rebuilding (edit everything, then rebuild once)
+- If Netlify auto-deploy is disabled
+- If a deploy hook is configured and you want to trigger a rebuild manually
+- If a previous deploy was cancelled or failed for an external reason
 
 ---
 
@@ -236,14 +236,14 @@ src/app/
 ├── admin/
 │   ├── layout.tsx              # Admin layout (no site header/footer)
 │   ├���─ page.tsx                # Login page
-│   ├── dashboard/page.tsx      # Dashboard + Rebuild button
+│   ├── dashboard/page.tsx      # Dashboard + deploy trigger button
 │   ├── products/page.tsx       # Product editor (detail + card tabs)
 │   └��─ documents/page.tsx      # Document section editor
 └── api/admin/
     ├── auth/route.ts           # Authentication (POST/GET/DELETE)
     ├── products/route.ts       # Products API (GET/PUT)
     ├─��� documents/route.ts      # Documents API (GET/PUT/POST/DELETE)
-    └── rebuild/route.ts        # Rebuild & Deploy API (POST)
+    └── rebuild/route.ts        # Netlify deploy trigger API (POST)
 ```
 
 ---
@@ -254,20 +254,23 @@ src/app/
 2. `robots: noindex, nofollow` prevents indexing
 3. HTTP-only, Secure, SameSite=strict cookies
 4. All API routes verify session before processing
-5. Rebuild API only accessible to authenticated admins
+5. Deploy trigger API only accessible to authenticated admins
 6. **Always change default credentials in production**
+7. GitHub token must have repository contents read/write access only
 
 ---
 
 ## Troubleshooting
 
 ### Changes don't appear on the site
-Click **Rebuild & Deploy** on the dashboard. The site uses SSG — changes only appear after rebuild.
+Check Netlify deploy status. The site uses SSG, so changes appear after Netlify finishes the build triggered by the GitHub commit.
 
-### Rebuild fails
-Check server logs. Common causes:
+### Save or deploy fails
+Check Netlify function logs and environment variables. Common causes:
+- Missing `GITHUB_TOKEN`, `GITHUB_REPO`, or wrong `GITHUB_BRANCH`
+- GitHub token lacks Contents read/write permission
+- Netlify auto-deploy is disabled and `NETLIFY_BUILD_HOOK_URL` is missing
 - TypeScript/lint errors in code (not from admin edits)
-- Disk space full
 - PM2 not running
 
 ### Can't log in
